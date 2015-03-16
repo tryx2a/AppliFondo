@@ -1,14 +1,25 @@
-﻿La génération a démarré 23/01/2015 08:58:46.
-     1>Projet "C:\Users\Yannick\Desktop\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" sur le nœud 2 (Build cible(s)).
+﻿La génération a démarré 16/03/2015 22:49:33.
+     1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Yannick\Desktop\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _WINDOWS /D _USRDLL /D WIN32PRICER2_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /MDd /Zp1 /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Computations.cpp mc.cpp method.cpp
-         Computations.cpp
-         Génération de code en cours...
-         Ignoré... (aucune modification pertinente détectée)
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _WINDOWS /D _USRDLL /D WIN32PRICER2_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /MDd /Zp1 /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt bs.cpp Computations.cpp fondoGarantito.cpp mc.cpp method.cpp model.cpp optionBasket.cpp produit.cpp
+         produit.cpp
+         optionBasket.cpp
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\optionbasket.cpp(31): warning C4101: 'i' : variable locale non référencée
+         model.cpp
          method.cpp
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\method.cpp(20): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned long', perte possible de données
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\method.cpp(39): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned long', perte possible de données
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\method.cpp(125): warning C4101: 'ecartDelta' : variable locale non référencée
          mc.cpp
+         fondoGarantito.cpp
+         Computations.cpp
+         bs.cpp
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\bs.cpp(36): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\bs.cpp(68): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\win32pricer2\bs.cpp(145): warning C4244: 'initialisation' : conversion de 'double' en 'int', perte possible de données
+         Génération de code en cours...
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Yannick\Desktop\pnl-win32-1.7.1\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libpnl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.lib" /MACHINE:X86 /DLL Debug\bs.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.dll" /INCREMENTAL /NOLOGO /LIBPATH:"..\pnl-win32-1.7.1\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libpnl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.lib" /MACHINE:X86 /DLL Debug\bs.obj
          Debug\Computations.obj
          Debug\fondoGarantito.obj
          Debug\mc.obj
@@ -16,10 +27,10 @@
          Debug\model.obj
          Debug\optionBasket.obj
          Debug\produit.obj
-            CrÚation de la bibliothÞque C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.lib et de l'objet C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.exp
-         Win32Pricer2.vcxproj -> C:\Users\Yannick\Desktop\Win32Pricer2\Debug\Win32Pricer2.dll
-     1>Génération du projet "C:\Users\Yannick\Desktop\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" terminée (Build cible(s)).
+            Création de la bibliothèque C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.lib et de l'objet C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.exp
+         Win32Pricer2.vcxproj -> C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.dll
+     1>Génération du projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" terminée (Rebuild cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:01.96
+Temps écoulé 00:00:09.66
