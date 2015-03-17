@@ -10,5 +10,6 @@ namespace MvcApplication1.Models
         public string isin { get; set; }
         public string nom { get; set; }
         public double prix { get; set; }
+        public string devise { get; set; }
     }
 }
