@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\method">
+      <UniqueIdentifier>{418cdd1a-5889-47f7-a99a-2965d2b35a4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\model">
+      <UniqueIdentifier>{5e9c0429-3804-481e-b4ce-91353b5a5b2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\rate">
+      <UniqueIdentifier>{94d0708a-891e-4bc6-b285-34a904464ab9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers d%27en-tête\produits">
+      <UniqueIdentifier>{0161ea72-6278-4989-92f1-d9bf18cb9478}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\method">
+      <UniqueIdentifier>{87f81b25-d5ae-41dd-9f5f-74ba76a70c9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\model">
+      <UniqueIdentifier>{cf50c0d3-c6a6-44ac-bf3b-31c1a2227016}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\produits">
+      <UniqueIdentifier>{322a3c61-c241-4e4e-9db5-240a8376f612}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fichiers sources\rate">
+      <UniqueIdentifier>{0e752d8b-c877-40d7-8b4e-6950b37e47ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\method\mc.cpp">
+      <Filter>Fichiers sources\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\method\method.cpp">
+      <Filter>Fichiers sources\method</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\model\bs.cpp">
+      <Filter>Fichiers sources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\model\model.cpp">
+      <Filter>Fichiers sources\model</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\taux.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\tauxCIR.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\tauxConstant.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\tauxDeChange.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\tauxLPM.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\rate\tauxVasicek.cpp">
+      <Filter>Fichiers sources\rate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\produits\fondoGarantito.cpp">
+      <Filter>Fichiers sources\produits</Filter>
+    </ClCompile>
+    <ClCompile Include="..\MoteurCalcNatif\produits\produit.cpp">
+      <Filter>Fichiers sources\produits</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\MoteurCalcNatif\method\mc.h">
+      <Filter>Fichiers d%27en-tête\method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\method\method.h">
+      <Filter>Fichiers d%27en-tête\method</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\model\bs.h">
+      <Filter>Fichiers d%27en-tête\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\model\model.h">
+      <Filter>Fichiers d%27en-tête\model</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\produits\fondoGarantito.h">
+      <Filter>Fichiers d%27en-tête\produits</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\taux.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\tauxCIR.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\tauxConstant.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\tauxDeChange.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\tauxLPM.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\rate\tauxVasicek.h">
+      <Filter>Fichiers d%27en-tête\rate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\MoteurCalcNatif\produits\produit.h">
+      <Filter>Fichiers d%27en-tête\produits</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

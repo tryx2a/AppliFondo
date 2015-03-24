@@ -16,17 +16,20 @@ namespace MvcApplication1.Controllers
         public ActionResult Index()
         {
             Panier panier = new Panier();
-            List<MvcApplication1.Models.Action> ListeAction = panier.getListAction();
+            DateTime debut = new DateTime(2010, 1, 4);
+            DateTime fin = new DateTime(2010, 1, 4);
+            List<MvcApplication1.Models.Action> ListeAction = panier.getListAction(debut,fin);
 
+            /*
 
-
-            string[] l2 = { "BRK.A" };
+            string[] l2 = { "BUD", "AAPL", "SAN", "3988.HK", "BRK.A", "0939.HK", "CHL", "ENI.MI", "XOM", "GSZ.PA", "1398.HK", "MC.PA", "MSFT", "PTR", "SAN.PA", "SIE.DE", "TEF", "TOT", "UN", "WMT" };
            
             ServiceReference.DataHistoricalColumn[] hc = new ServiceReference.DataHistoricalColumn[1];
             hc[0] = DataHistoricalColumn.Close;
 
-            DateTime debut = new DateTime(2010,1,1);
-            DateTime fin = new DateTime(2010,12,21);
+            //Annee-Mois-Jours
+            DateTime debut = new DateTime(2010,1,4);
+            DateTime fin = new DateTime(2010,1,4);
 
             ServiceReference.ActifServiceClient client = new ServiceReference.ActifServiceClient();
             
@@ -41,17 +44,17 @@ namespace MvcApplication1.Controllers
             for (int i = 0; i < tailleRes; i++)
             {
                 ViewData["Panier"] += "<tr><td>" + resultRq.Ds.Tables[0].Rows[i]["Date"] + "</td><td>" + resultRq.Ds.Tables[0].Rows[i]["Close"] + "</td></tr>";
-            }
+            }*/
 
            
 
-           /* ViewData["Panier"] = "<table class=\"table\"><tr><th>ISIN</th><th>Nom</th><th>Devise</th><th>Prix Spot</th></tr>";
+            ViewData["Panier"] = "<table class=\"table\"><tr><th>ISIN</th><th>Nom</th><th>Devise</th><th>Prix Spot</th></tr>";
 
                     foreach (MvcApplication1.Models.Action action in ListeAction)
                     {
                         ViewData["Panier"] += "<tr><td>"+  action.isin + "</td><td>" + action.nom + "</td><td>"+action.devise+"</td><td>" + action.prix + "</td></tr>";
                     } 
-                    ViewData["Panier"] +="</table>";*/
+                    ViewData["Panier"] +="</table>";
 
             return View();
         }
