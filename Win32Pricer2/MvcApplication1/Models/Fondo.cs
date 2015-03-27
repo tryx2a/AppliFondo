@@ -10,5 +10,6 @@ namespace MvcApplication1.Models
         public double Prix { get; set; }
         public double Ic { get; set; }
         public double ProfitNLost { get; set; }
+        
     }
 }

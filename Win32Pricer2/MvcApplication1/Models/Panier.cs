@@ -10,6 +10,19 @@ namespace MvcApplication1.Models
     {
         public int taille { get; set; }
         public List<Action> listAction { get; set; }
+        public double[] spot { get; set; }
+
+        public double[] getSpot()
+        {
+            
+            
+            return spot;
+        }
+
+        public void setSpot(double[] spot_)
+        {
+            this.spot = spot_;
+        }
 
         public List<Action> getListAction()
         {
@@ -55,10 +68,24 @@ namespace MvcApplication1.Models
 
             client.Close();
 
-            return new List<Action>
+            TauxDeChange fx = new TauxDeChange();
+
+            double fxUsdEuro = fx.getFxUsdEur()[0];
+            double fxCnyEuro = fx.getFxYuanEur()[0];
+
+
+            double[] getSpot_ = new double[22];
+            for (int i = 2; i < 22; i++)
             {
-                new Action {isin ="", nom = "Taux de change USD/EUR", prix = 0, devise="EUR (€)"},
-                new Action {isin ="", nom = "Taux de change CNY/EUR", prix = 0, devise="EUR (€)"},
+                getSpot_[i] = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[i-2]["Close"]);
+            }
+
+            
+
+                return new List<Action>
+            {
+                new Action {isin ="", nom = "Taux de change USD/EUR", prix = fxUsdEuro, devise="EUR (€)"},
+                new Action {isin ="", nom = "Taux de change CNY/EUR", prix = fxCnyEuro, devise="EUR (€)"},
                 new Action {isin ="BE0003793107", nom = "Anheuser-Busch InBev NV", prix = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[0]["Close"]), devise="EUR (€)"},
                 new Action {isin = "US0378331005", nom = "Apple Inc", prix = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[1]["Close"]), devise="USD ($)"},
                 new Action {isin = "ES0113900J37", nom = "Banco Santander SA", prix = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[2]["Close"]), devise="EUR (€)"},

@@ -75,3 +75,4 @@ C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\MvcApplication1\bin\fr\System.W
 C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\MvcApplication1\bin\fr\System.Web.WebPages.Razor.resources.dll
 C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\MvcApplication1\obj\Debug\MvcApplication1.dll
 C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\MvcApplication1\obj\Debug\MvcApplication1.pdb
+C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\MvcApplication1\obj\Debug\MvcApplication1.csprojResolveAssemblyReference.cache

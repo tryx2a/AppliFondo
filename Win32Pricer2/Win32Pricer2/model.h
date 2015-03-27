@@ -1,6 +1,8 @@
-#pragma once
 #ifndef _MODEL_H
 #define _MODEL_H
+
+#include "tauxLPM.h"
+#include "tauxDeChange.h"
 
 #include "pnl/pnl_random.h"
 #include "pnl/pnl_vector.h"
@@ -9,15 +11,21 @@
 class Model{
 public:
 	int size_; /// nombre d'actifs du modèle
-	double r_; /// taux d'intérêt
+	Taux* r_; /// taux d'intérêt
+	TauxDeChange *fx_; ///taux de change eur_doll et eur_yuan
 	PnlVect *trend; /// trend des actifs du marché
 	double rho_; /// paramètre de corrélation
 	PnlVect *sigma_; /// vecteur de volatilités
 	PnlVect *spot_; /// valeurs initiales du sous-jacent
+	int numberAssetEuro_; /// Nombre d'actifs en devise Euro 
+	int numberAssetDollar_; /// Nombre d'actifs en devise Dollar
+	int numberAssetYuan_; /// Nombre d'actifs en devise Yuan
 
-	Model(PnlVect *spot_, PnlVect *sigma_, double rho_, double r_, int size_, PnlVect *trend);
-	
-	
+	//bool isRate; ///Boolean permettant de déterminer si on simule un taux de change
+
+	Model(PnlVect *spot_, PnlVect *sigma_, double rho_, Taux* r_, int size_, PnlVect *trend, TauxDeChange *fx, int numberAssetEuro, int numberAssetDollar, int numberAssetYuan);
+	Model(double *spot_, double *sigma_, double rho_, Taux* r_, int size_, double *trend, TauxDeChange *fx,
+		int numberAssetEuro, int numberAssetDollar, int numberAssetYuan);
 
 	virtual ~Model();
 
@@ -29,7 +37,7 @@ public:
 	* @param[in] T  maturité
 	* @param[in] N nombre de dates de constatation
 	*/
-	virtual void asset(PnlMat *path, double T, int N, PnlRng *rng);
+	virtual void asset(PnlMat *path, double subscriptionPeriod, int timeStepSubscription, double T, int N, PnlRng *rng);
 
 	/**
 	* Calcule une trajectoire du sous-jacent connaissant le
@@ -43,7 +51,7 @@ public:
 	* @param[in] T date jusqu'à laquelle on simule la trajectoire
 	* @param[in] past trajectoire réalisée jusqu'a la date t
 	*/
-	virtual void asset(PnlMat *path, double t, int N, double T, PnlRng *rng, const PnlMat *past);
+	virtual void asset(PnlMat *path, double t, double subscriptionPeriod, int timeStepSubscription, int N, double T, PnlRng *rng, const PnlMat *past);
 
 	/**
 	* Shift d'une trajectoire du sous-jacent
@@ -58,7 +66,7 @@ public:
 	* @param[in] d indice du sous-jacent à shifter
 	* @param[in] timestep pas de constatation du sous-jacent
 	*/
-	virtual void shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep);
+	virtual void shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep, int timeStepSubscription);
 
 	/* Simulation de la couverture
 	* @param[out] path contient la trajectoire simulée

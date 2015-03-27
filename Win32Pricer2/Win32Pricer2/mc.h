@@ -1,12 +1,10 @@
-#pragma once
 #ifndef _MC_H
 #define _MC_H
 
-#include "optionBasket.h"
+
 #include "fondoGarantito.h"
 #include "bs.h"
 #include "pnl/pnl_random.h"
-//#include "../parser.h"
 #include "method.h"
 
 class MonteCarlo : public Method
@@ -18,8 +16,6 @@ public:
 	*/
 	//MonteCarlo(Param* P);
 	MonteCarlo(Model *mod, Produit *opt, double h, int H, int samples);
-
-	MonteCarlo(int option_size,double* spot,double* sigma,double* trend,double r,double rho,double h,int H,double maturity,int timeSteps,int samples,double vlr);
 
 	/**
 	* Calcule le prix de l'option à la date 0

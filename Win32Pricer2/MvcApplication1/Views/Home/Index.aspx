@@ -40,7 +40,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre de dates de constatation pendant la souscription</label>
                                 <div class="col-sm-10 col-lg-3">
-                                  <input type="number" class="form-control">
+                                  <input type="number" class="form-control" name="timeStepSub" value="4" min="1">
                                 </div>
                             </div>
 
@@ -59,11 +59,18 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-sm-2 control-label">Taux Zero-Coupon en euros</label>
+                                <div class="col-sm-10">
+                                   <label class="col-sm-2 control-label">EURIBOR 3M</label>
+                                </div>
+                            </div>
+
+                            <!--<div class="form-group">
                                 <label for="exampleInputFile" class="col-sm-2 control-label">Taux Zero-Coupon en euros</label>
                                 <div class="col-sm-10 col-lg-3">
                                 <input type="file" id="exampleInputFile">
                                 </div>
-                            </div>
+                            </div>-->
 
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre de constatation pendant le reste de la durée de vie du produit</label>
@@ -75,7 +82,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre de rebalancement</label>
                                 <div class="col-sm-10 col-lg-3">
-                                  <input type="number" class="form-control">
+                                  <input type="number" class="form-control" name="H" value="70" min="1">
                                 </div>
                             </div>
 
@@ -89,7 +96,7 @@
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">Nombre d'occurence dans la simulation de Monte Carlo</label>
                                 <div class="col-sm-10 col-lg-3">
-                                  <input type="number" class="form-control">
+                                  <input type="number" class="form-control" name="sample" value="5000" min="0" max="50000">
                                 </div>
                             </div>
 
@@ -109,11 +116,15 @@
                     </div>    
                 </div>
 
-                <input type="submit" value="Cliquer ici pour lancer les calculs" />
+                <input type="submit" value="Cliquer ici pour lancer les calculs" onclick="unable()" />
             </form>
         </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script>
+        function unable(){
+        }
+    </script>
 </body>
 </html>

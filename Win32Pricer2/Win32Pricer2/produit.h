@@ -1,4 +1,3 @@
-#pragma once
 #ifndef _PRODUIT_H
 #define _PRODUIT_H
 
