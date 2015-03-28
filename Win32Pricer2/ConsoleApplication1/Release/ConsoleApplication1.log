@@ -1,0 +1,49 @@
+﻿La génération a démarré 17/03/2015 22:37:51.
+     1>Projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\ConsoleApplication1\ConsoleApplication1.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\pnl-win32-1.7.1\include" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D WIN32 /D _XKEYCHECK_H /D NDEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\MoteurCalcNatif\method\mc.cpp ..\MoteurCalcNatif\method\method.cpp ..\MoteurCalcNatif\model\bs.cpp ..\MoteurCalcNatif\model\model.cpp ..\MoteurCalcNatif\parserCSV.cpp ..\MoteurCalcNatif\produits\fondoGarantito.cpp ..\MoteurCalcNatif\produits\produit.cpp ..\MoteurCalcNatif\rate\taux.cpp ..\MoteurCalcNatif\rate\tauxCIR.cpp ..\MoteurCalcNatif\rate\tauxConstant.cpp ..\MoteurCalcNatif\rate\tauxDeChange.cpp ..\MoteurCalcNatif\rate\tauxLPM.cpp ..\MoteurCalcNatif\rate\tauxVasicek.cpp main.cpp
+         mc.cpp
+         method.cpp
+     1>..\MoteurCalcNatif\method\method.cpp(23): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned long', perte possible de données
+         bs.cpp
+     1>..\MoteurCalcNatif\model\bs.cpp(78): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+     1>..\MoteurCalcNatif\model\bs.cpp(82): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+     1>..\MoteurCalcNatif\model\bs.cpp(116): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+     1>..\MoteurCalcNatif\model\bs.cpp(126): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+     1>..\MoteurCalcNatif\model\bs.cpp(264): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+         model.cpp
+         parserCSV.cpp
+         fondoGarantito.cpp
+         produit.cpp
+         taux.cpp
+         tauxCIR.cpp
+         tauxConstant.cpp
+         tauxDeChange.cpp
+     1>..\MoteurCalcNatif\rate\tauxDeChange.cpp(111): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+         tauxLPM.cpp
+     1>..\MoteurCalcNatif\rate\tauxLPM.cpp(95): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+         tauxVasicek.cpp
+         main.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Release\ConsoleApplication1.exe" /INCREMENTAL:NO /NOLOGO /LIBPATH:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\pnl-win32-1.7.1\lib" kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib libpnl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Release\ConsoleApplication1.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Release\ConsoleApplication1.lib" /MACHINE:X86 /SAFESEH Release\mc.obj
+         Release\method.obj
+         Release\bs.obj
+         Release\model.obj
+         Release\parserCSV.obj
+         Release\fondoGarantito.obj
+         Release\produit.obj
+         Release\taux.obj
+         Release\tauxCIR.obj
+         Release\tauxConstant.obj
+         Release\tauxDeChange.obj
+         Release\tauxLPM.obj
+         Release\tauxVasicek.obj
+         Release\main.obj
+         Génération de code en cours
+         Fin de la génération du code
+         ConsoleApplication1.vcxproj -> C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Release\ConsoleApplication1.exe
+     1>Génération du projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\ConsoleApplication1\ConsoleApplication1.vcxproj" terminée (Build cible(s)).
+
+La génération a réussi.
+
+Temps écoulé 00:00:11.43

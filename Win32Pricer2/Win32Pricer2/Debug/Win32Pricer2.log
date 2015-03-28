@@ -1,5 +1,5 @@
-﻿La génération a démarré 17/03/2015 11:27:34.
-     1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" sur le nœud 2 (Rebuild cible(s)).
+﻿La génération a démarré 24/03/2015 23:50:05.
+     1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" sur le nœud 2 (Build cible(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _WINDOWS /D _USRDLL /D WIN32PRICER2_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /MDd /Zp1 /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt bs.cpp Computations.cpp fondoGarantito.cpp mc.cpp method.cpp model.cpp optionBasket.cpp produit.cpp
          produit.cpp
@@ -29,8 +29,8 @@
          Debug\produit.obj
             Création de la bibliothèque C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.lib et de l'objet C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.exp
          Win32Pricer2.vcxproj -> C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Debug\Win32Pricer2.dll
-     1>Génération du projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" terminée (Rebuild cible(s)).
+     1>Génération du projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:08.48
+Temps écoulé 00:00:10.90

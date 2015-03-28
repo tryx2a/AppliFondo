@@ -1,0 +1,36 @@
+﻿La génération a démarré 24/03/2015 23:25:05.
+     1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\ConsoleApplication1\ConsoleApplication1.vcxproj" sur le nœud 3 (Rebuild cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\MoteurCalcNatif\method\mc.cpp ..\MoteurCalcNatif\method\method.cpp ..\MoteurCalcNatif\model\bs.cpp ..\MoteurCalcNatif\model\model.cpp ..\MoteurCalcNatif\produits\fondoGarantito.cpp ..\MoteurCalcNatif\produits\produit.cpp ..\MoteurCalcNatif\rate\taux.cpp ..\MoteurCalcNatif\rate\tauxCIR.cpp ..\MoteurCalcNatif\rate\tauxConstant.cpp ..\MoteurCalcNatif\rate\tauxDeChange.cpp ..\MoteurCalcNatif\rate\tauxLPM.cpp ..\MoteurCalcNatif\rate\tauxVasicek.cpp main.cpp
+         main.cpp
+     1>c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\consoleapplication1\main.cpp(1): fatal error C1083: Impossible d'ouvrir le fichier include : '../MoteurCalcNatif/model/bs.h' : No such file or directory
+         tauxVasicek.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\tauxVasicek.cpp' : No such file or directory
+         tauxLPM.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\tauxLPM.cpp' : No such file or directory
+         tauxDeChange.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\tauxDeChange.cpp' : No such file or directory
+         tauxConstant.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\tauxConstant.cpp' : No such file or directory
+         tauxCIR.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\tauxCIR.cpp' : No such file or directory
+         taux.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\rate\taux.cpp' : No such file or directory
+         produit.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\produits\produit.cpp' : No such file or directory
+         fondoGarantito.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\produits\fondoGarantito.cpp' : No such file or directory
+         model.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\model\model.cpp' : No such file or directory
+         bs.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\model\bs.cpp' : No such file or directory
+         method.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\method\method.cpp' : No such file or directory
+         mc.cpp
+     1>c1xx : fatal error C1083: Impossible d'ouvrir le fichier source : '..\MoteurCalcNatif\method\mc.cpp' : No such file or directory
+         Génération de code en cours...
+     1>Génération du projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\ConsoleApplication1\ConsoleApplication1.vcxproj" terminée (Rebuild cible(s)) -- ÉCHEC.
+
+ÉCHEC de la build.
+
+Temps écoulé 00:00:03.18
