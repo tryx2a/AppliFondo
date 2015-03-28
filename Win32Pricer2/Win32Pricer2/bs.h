@@ -1,4 +1,3 @@
-#pragma once
 #ifndef _BS_H
 #define _BS_H
 
@@ -10,9 +9,10 @@ class BS : public Model
 public:
 	PnlMat *chol; /// matrice de cholesky calculé dans le constructeur
 
-	BS(PnlVect *spot_, PnlVect *sigma_, double rho_, double r_, int size_, PnlVect *trend);
-	
+	BS(PnlVect *spot_, PnlVect *sigma_, double rho_, Taux* r_, int size_, PnlVect *trend, TauxDeChange *fx, int numberAssetEuro, int numberAssetDollar, int numberAssetYuan, const char *pastData);
 
+	BS(double *spot_, double *sigma_, double rho_, Taux* r_, int size_, double *trend, TauxDeChange *fx,
+		int numberAssetEuro, int numberAssetDollar, int numberAssetYuan, const char *pastData);
 	~BS();
 
 	/**
@@ -23,7 +23,7 @@ public:
 	* @param[in] T  maturité
 	* @param[in] N nombre de dates de constatation
 	*/
-	void asset(PnlMat *path, double T, int N, PnlRng *rng);
+	void asset(PnlMat *path, double subscriptionPeriod, int timeStepSubscription, double T, int N, PnlRng *rng);
 
 	/**
 	* Calcule une trajectoire du sous-jacent connaissant le
@@ -37,7 +37,7 @@ public:
 	* @param[in] T date jusqu'à laquelle on simule la trajectoire
 	* @param[in] past trajectoire réalisée jusqu'a la date t
 	*/
-	void asset(PnlMat *path, double t, int N, double T, PnlRng *rng, const PnlMat *past);
+	void asset(PnlMat *path, double t, double subscriptionPeriod, int timeStepSubscription, int N, double T, PnlRng *rng, const PnlMat *past);
 
 	/**
 	* Shift d'une trajectoire du sous-jacent
@@ -52,14 +52,21 @@ public:
 	* @param[in] d indice du sous-jacent à shifter
 	* @param[in] timestep pas de constatation du sous-jacent
 	*/
-	void shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep);
+	void shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep, int timeStepSubscription);
 
 	/**
 	* Compute Cholesky factorization for the identity matrix
 	* @param[out] Return the cholesky factorized matrix
 	* @param[in] rho_ paramètre de corrélation
 	*/
-	void computeCholesky(PnlMat *L, double rho_);
+	void computeCholesky(PnlMat *L, double rho_, PnlMat *past);
+
+	/**
+	* Calcul la matrice de correlation à partir de données du passé
+	* @[in] past : matrice correspondant aux trajectoires passées des actifs
+	* @[in] corMat : matrice qui contiendra la matrice de corrélation des actifs
+	*/
+	void computeCorrelation(PnlMat *past, PnlMat* corMat);
 
 	/**
 	* Shift d'une trajectoire du sous-jacent
@@ -69,7 +76,7 @@ public:
 	* @param[in]  assetIndex
 	* @param[out] computedPrice
 	*/
-	double computeIteration(double currentPrice, double h, int assetIndex, PnlVect* vectorGaussian, bool useTrend);
+	double computeIteration(double currentPrice, double h, int assetIndex, PnlVect* vectorGaussian, bool useTrend, double t);
 
 
 	/**

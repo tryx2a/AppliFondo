@@ -33,6 +33,7 @@
     <div class="panel panel-primary">
                 <div class="panel-heading">Résultats après calculs</div>
                 <div class="panel-body">
+                    
                     <div class="col-lg-6 input-group">
                         <span class="input-group-addon" >Prix : <%=ViewData["Prix"]%></span>
                     </div>
@@ -46,7 +47,7 @@
                     </br>
 
                     <div class="col-lg-6 input-group">
-                        <span class="input-group-addon" >Profit and Lost : <%=ViewData["PnL"]%></span>
+                        <span class="input-group-addon" >Résultats de la couverture : <%=ViewData["Couverture"]%></span>
                     </div>
 
                 </div>

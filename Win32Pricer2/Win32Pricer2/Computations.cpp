@@ -5,45 +5,79 @@
 #include "ctime"
 
 
-void Computations::computePrice(double &ic, double &prix, int option_size, double *spot, double *sigma, double* trend,
-	double r, double rho, double h, int H, double maturity, int timeSteps, int samples,double vlr)
+void Computations::computePrice(double &ic, double &prix, int option_size, double *spot, double *sigma, double* trend, double *fxUsdEur, double* fxYuanEur, double *tauxActu,
+	 double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub)
 {
-	Method *mc = new MonteCarlo(option_size, spot, sigma, trend, r, rho, h, H, maturity, timeSteps, samples, vlr);
+
+	Taux *r = new TauxLPM(tauxActu);
+	TauxDeChange *fx = new TauxDeChange(fxUsdEur,fxYuanEur);
+
+	Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
+	Model *mod = new BS(spot,sigma,rho,r,option_size,trend,fx,13,4,3,NULL);
+	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
 
 	mc->price(prix, ic);
+
 }
 
-void Computations::computeDelta(double *delta, double *ic, int option_size, double *spot, double *sigma, double* trend, double r,
-	double rho, double h, int H, double maturity, int timeSteps, int samples,double vlr)
+void Computations::computePrice(double &ic, double &prix, int option_size, double *spot, double *sigma, double* trend,
+	double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub)
 {
-	Method *mc = new MonteCarlo(option_size, spot, sigma, trend, r, rho, h, H, maturity, timeSteps, samples, vlr);
-	PnlVect* deltaVect = pnl_vect_new();
-	deltaVect = pnl_vect_create(option_size);
-	PnlVect* icVect = pnl_vect_new();
-	icVect = pnl_vect_create(option_size);
-	mc->delta(NULL, 0, deltaVect, icVect);
-	for (int i = 0; i < option_size; i++){
-		delta[i] = GET(deltaVect, i);
-		ic[i] = GET(icVect, i);
+	//PnlVect *u = pnl_vect_create_from_file("C:/Users/Yannick/Desktop/AppliFondo/Win32Pricer2/data/TauxZC.csv");
+
+	Taux *r = new TauxLPM();
+	TauxDeChange *fx = new TauxDeChange();
+
+	Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
+	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
+	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
+
+	mc->price(prix, ic);
+
+}
+
+void Computations::computePnL(double &ic, double &prix, double &pnl, int option_size, double *spot, double *sigma, double* trend,
+	double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub,
+	double *tabPayoff, double *tabValuePfCouv, double *tabPartSansRisque){
+
+	Taux *r = new TauxLPM();
+	TauxDeChange *fx = new TauxDeChange();
+
+	Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
+	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
+	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
+
+	double V = 0.0;
+	double portfolio = 0.0;
+	double payoff = 0.0;
+	PnlVect *delta = pnl_vect_create(mc->opt_->size_);
+
+	double tho = 0.0;
+
+	PnlMat *simulMarketResult, *tempMarketResult;
+	simulMarketResult = pnl_mat_create(mc->H_ + 1, mc->mod_->size_);
+	mc->mod_->simul_market(simulMarketResult, maturity, mc->H_, mc->rng);
+	tempMarketResult = pnl_mat_copy(simulMarketResult);
+
+
+	for (int i = 0; i<H + 1; i++){
+		mc->freeRiskInvestedPart(V, maturity + subPeriod, portfolio, payoff, delta, tho, tempMarketResult);
+
+		tabPayoff[i] = payoff;
+		tabValuePfCouv[i] = portfolio;
+		tabPartSansRisque[i] = V;
+
+		tho += (maturity + subPeriod) / ((double)mc->H_);
+		//Extraction des données de la matrice past pour la date de rebalancement
+		pnl_mat_free(&tempMarketResult);
+		if (i<H){
+			tempMarketResult = pnl_mat_create((i + 1) + 1, mc->mod_->size_);
+			pnl_mat_extract_subblock(tempMarketResult, simulMarketResult, 0, (i + 1) + 1, 0, mc->mod_->size_);
+		}
 	}
 
-}
-
-void Computations::computePnL(double &pnl,double &ic, double &prix, int option_size, double *spot, double *sigma, double* trend,
-	double r, double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr){
-
-	//Creation if the method
-	Method *mc = new MonteCarlo(option_size, spot, sigma, trend, r, rho, h, H, maturity, timeSteps, samples, vlr);
-
-	//Create the vector of delta
-	PnlVect* V = pnl_vect_create(H + 1);
-
-	//Compute the Profit n Lost
-	mc->freeRiskInvestedPart(V, maturity, pnl);
-
-}
-
-void Computations::helloToYou(){
-	std::cout << "Salut Yannick c'est NOEL ! " << std::endl;
+	prix = portfolio;
+	ic = payoff;
+	pnl = portfolio - payoff;
 
 }

@@ -7,7 +7,7 @@ using namespace std;
 
 #include "model.h"
 
-Model::Model(PnlVect *spot_, PnlVect *sigma_, double rho_, double r_, int size_, PnlVect *trend)
+Model::Model(PnlVect *spot_, PnlVect *sigma_, double rho_, Taux* r_, int size_, PnlVect *trend, TauxDeChange *fx, int numberAssetEuro, int numberAssetDollar, int numberAssetYuan)
 {
 	this->spot_ = spot_;
 	this->sigma_ = sigma_;
@@ -15,11 +15,47 @@ Model::Model(PnlVect *spot_, PnlVect *sigma_, double rho_, double r_, int size_,
 	this->trend = trend;
 	this->r_ = r_;
 	this->size_ = size_;
+	this->fx_ = fx;
+	this->numberAssetEuro_ = numberAssetEuro;
+	this->numberAssetDollar_ = numberAssetDollar;
+	this->numberAssetYuan_ = numberAssetYuan;
+	//this->isRate = false;
 
 }
 
+Model::Model(double *spot_, double *sigma_, double rho_, Taux* r_, int size_, double *trend, TauxDeChange *fx,
+	int numberAssetEuro, int numberAssetDollar, int numberAssetYuan)
+{
+	this->spot_ = pnl_vect_create_from_ptr(size_, spot_);
+	this->sigma_ = pnl_vect_create_from_ptr(size_, sigma_);
+	this->rho_ = rho_;
+	this->trend = pnl_vect_create_from_ptr(size_, trend);
+	this->r_ = r_;
+	this->size_ = size_;
+	this->fx_ = fx;
+	this->numberAssetEuro_ = numberAssetEuro;
+	this->numberAssetDollar_ = numberAssetDollar;
+	this->numberAssetYuan_ = numberAssetYuan;
+	//this->isRate = false;
+}
+Model::~Model(){
 
-Model::~Model(){}
+	if (this->spot_ != NULL){
+		pnl_vect_free(&(this->spot_));
+	}
+	if (this->sigma_ != NULL){
+		pnl_vect_free(&(this->sigma_));
+	}
+	if (this->r_ != NULL){
+		delete this->r_;
+	}
+	if (this->trend != NULL){
+		pnl_vect_free(&(this->trend));
+	}
+	if (this->fx_ != NULL){
+		delete this->fx_;
+	}
+}
 
 /**
 * Génère une trajectoire du modèle et la stocke dans path
@@ -29,7 +65,7 @@ Model::~Model(){}
 * @param[in] T  maturité
 * @param[in] N nombre de dates de constatation
 */
-void Model::asset(PnlMat *path, double T, int N, PnlRng *rng){}
+void Model::asset(PnlMat *path, double subscriptionPeriod, int timeStepSubscription, double T, int N, PnlRng *rng){}
 
 /**
 * Calcule une trajectoire du sous-jacent connaissant le
@@ -43,7 +79,7 @@ void Model::asset(PnlMat *path, double T, int N, PnlRng *rng){}
 * @param[in] T date jusqu'à laquelle on simule la trajectoire
 * @param[in] past trajectoire réalisée jusqu'a la date t
 */
-void Model::asset(PnlMat *path, double t, int N, double T, PnlRng *rng, const PnlMat *past){}
+void Model::asset(PnlMat *path, double t, double subscriptionPeriod, int timeStepSubscription, int N, double T, PnlRng *rng, const PnlMat *past){}
 
 /**
 * Shift d'une trajectoire du sous-jacent
@@ -58,7 +94,7 @@ void Model::asset(PnlMat *path, double t, int N, double T, PnlRng *rng, const Pn
 * @param[in] d indice du sous-jacent à shifter
 * @param[in] timestep pas de constatation du sous-jacent
 */
-void Model::shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep){}
+void Model::shift_asset(PnlMat *shift_path, const PnlMat *path, int d, double h, double t, double timestep, int timeStepSubscription){}
 
 /* Simulation de la couverture
 * @param[out] path contient la trajectoire simulée

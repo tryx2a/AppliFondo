@@ -7,14 +7,42 @@ using namespace std;
 /**
 * Constructeur de la classe FondoGarantito
 */
-FondoGarantito::FondoGarantito(const double T_, const int timeSteps_, const int size_, const double valeurLiquidativeReference_) : Produit(T_, timeSteps_, size_){
-	this->valeurLiquidativeReference_ = valeurLiquidativeReference_;
+FondoGarantito::FondoGarantito(const double T_, const int timeSteps_, const int size_, const double valeurLiquidativeOrigine_, const double subscriptionPeriod_, const int timeStepSubscription_) : Produit(T_, timeSteps_, size_){
+	this->valeurLiquidativeOrigine_ = valeurLiquidativeOrigine_;
+	this->subscriptionPeriod_ = subscriptionPeriod_;
+	this->timeStepSubscription_ = timeStepSubscription_;
 }
 
 /**
 * Destructeur de la classe FondoGarantito
 */
 FondoGarantito::~FondoGarantito(){}
+
+/**
+* Calcul la VLR sur la période de soucription du produit financier
+*/
+double FondoGarantito::computeVLR(const PnlMat *path){
+	PnlVect *assetAtSpot = pnl_vect_new();
+	pnl_mat_get_row(assetAtSpot, path, 0);
+
+	double valeurLiquidativeReference = 0.0;
+	double rentabilite = 0.0;
+	double rentabiliteMax = 0.0;
+
+	for (int i = 1; i <= this->timeStepSubscription_; i++){
+		for (int j = 0; j<this->size_; j++){
+			rentabilite += MGET(path, i, j) / GET(assetAtSpot, j) - 1.0;
+		}
+		rentabilite /= this->size_;
+		if (rentabilite > rentabiliteMax){
+			rentabiliteMax = rentabilite;
+		}
+	}
+
+	pnl_vect_free(&assetAtSpot);
+
+	return this->valeurLiquidativeOrigine_*(1 + rentabiliteMax);
+}
 
 /**
 * Implémentation de la méthode de payoff
@@ -26,14 +54,14 @@ double FondoGarantito::payoff(const PnlMat *path){
 	PnlVect *assetAtMaturity = pnl_vect_new();
 	PnlVect *assetAtSpot = pnl_vect_new();
 
-	//Extraction des valeurs des actifs à maturité
-	pnl_mat_get_row(assetAtMaturity, path, TimeSteps_);
+	//Extraction des valeurs des actifs en date de constatation finale
+	pnl_mat_get_row(assetAtMaturity, path, TimeSteps_ + timeStepSubscription_);
 
-	//Extraction des valeurs des actifs en t=0
-	pnl_mat_get_row(assetAtSpot, path, 0);
+	//Extraction des valeurs des actifs en date de constatation initiale
+	pnl_mat_get_row(assetAtSpot, path, timeStepSubscription_);
 
 	for (int i = 0; i<assetAtMaturity->size; i++){
-		rentabiliteAsset = GET(assetAtMaturity, i) / GET(assetAtSpot, i) - 1;
+		rentabiliteAsset = GET(assetAtMaturity, i) / GET(assetAtSpot, i) - 1.0;
 
 		if (rentabiliteAsset > 0.375){
 			gamma += 0.375;
@@ -56,5 +84,9 @@ double FondoGarantito::payoff(const PnlMat *path){
 		gamma = 0.0;
 	}
 
-	return this->valeurLiquidativeReference_*(1 + gamma);
+	double VLR = computeVLR(path);
+	double payoff = VLR*(1 + gamma);
+
+
+	return payoff;
 }

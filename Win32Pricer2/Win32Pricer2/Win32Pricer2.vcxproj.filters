@@ -15,13 +15,19 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Computations.h">
+    <ClInclude Include="model.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="bs.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="model.h">
+    <ClInclude Include="taux.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="tauxDeChange.h">
+      <Filter>Fichiers d%27en-tête</Filter>
+    </ClInclude>
+    <ClInclude Include="tauxLPM.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="method.h">
@@ -33,21 +39,27 @@
     <ClInclude Include="produit.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="optionBasket.h">
+    <ClInclude Include="fondoGarantito.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="fondoGarantito.h">
+    <ClInclude Include="Computations.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Computations.cpp">
+    <ClCompile Include="model.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="bs.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="model.cpp">
+    <ClCompile Include="taux.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="tauxDeChange.cpp">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="tauxLPM.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="method.cpp">
@@ -59,10 +71,10 @@
     <ClCompile Include="produit.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="optionBasket.cpp">
+    <ClCompile Include="fondoGarantito.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="fondoGarantito.cpp">
+    <ClCompile Include="Computations.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
   </ItemGroup>

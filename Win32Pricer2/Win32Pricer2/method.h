@@ -1,13 +1,11 @@
-#pragma once
 
 #ifndef _METHOD_H
 #define _METHOD_H
 
-#include "optionBasket.h"
 #include "fondoGarantito.h"
 #include "model.h"
 #include "pnl/pnl_random.h"
-//#include "../parser.h"
+
 
 class Method{
 public:
@@ -18,11 +16,9 @@ public:
 	int H_; /* nombre de période de rebalancement*/
 	int samples_; /*! nombre de tirages Monte Carlo */
 
-	//Method(Param* P);
-
 	Method(Model *mod, Produit *opt, double h, int H, int samples);
 
-	Method(int option_size, double* spot, double* sigma, double* trend, double r, double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr);
+	//Method(Param* P);
 
 	virtual ~Method();
 
@@ -70,7 +66,7 @@ public:
 
 	/**
 	* Cette méthode permet de calculer le profit & loss d'un produit pour un certain nombre
-	* de rebalancement
+	* de rebalancement précisé dans le fichier .dat
 	*
 	* @param[in] V vecteur contenant pour chaque date de rebalancement l'investissement
 	* au taux sans risque
@@ -78,6 +74,19 @@ public:
 	* @param[in] profitLoss variable contenant le profit & loss final du produit
 	*/
 	void freeRiskInvestedPart(PnlVect *V, double T, double &profitLoss);
+
+	/**
+	* Cette méthode calcule la part investit au taux sans risque à un un instant tho donné correspondant à une date de rebalancement
+	*
+	* @param[in] V double correspondant à la part investit au taux sans risque
+	* @param[in] T double correspondant à la maturité du produit
+	* @param[in] portfolio double correspondant à la valeur du portefeuille de couverture
+	* @param[in] payoff double correspondant à la valeur du payoff
+	* @param[in] delta vecteur correspondant à la part à investir dans chaque actif risqué pour se couvrir
+	* @param[in] tho double correspondant à une date de rebalancement
+	* @param[in] past matrice correspondant aux trajectoires passées des actifs risqués
+	*/
+	void freeRiskInvestedPart(double &V, double T, double &portfolio, double &payoff, PnlVect *delta, double tho, PnlMat *past);
 };
 
 #endif /* !_METHOD_H */
