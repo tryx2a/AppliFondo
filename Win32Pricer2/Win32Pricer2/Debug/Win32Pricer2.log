@@ -1,4 +1,4 @@
-﻿La génération a démarré 28/03/2015 01:17:26.
+﻿La génération a démarré 28/03/2015 16:52:03.
      1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Win32Pricer2\Win32Pricer2.vcxproj" sur le nœud 2 (Rebuild cible(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _WINDOWS /D _USRDLL /D WIN32PRICER2_EXPORTS /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /MDd /Zp1 /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt bs.cpp Computations.cpp fondoGarantito.cpp mc.cpp method.cpp model.cpp produit.cpp taux.cpp tauxDeChange.cpp tauxLPM.cpp
@@ -25,4 +25,4 @@
 
 ÉCHEC de la build.
 
-Temps écoulé 00:00:03.21
+Temps écoulé 00:00:11.39
