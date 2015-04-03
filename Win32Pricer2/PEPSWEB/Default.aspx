@@ -31,9 +31,7 @@
             <asp:TextBox id="couv" rows="10" TextMode="multiline" runat="server" />
         </div>
         <br><br>
-<<<<<<< HEAD
- 
-=======
+
 
         <asp:Chart ID="mainChart" runat="server" Visible="true" Height="500px" Width="988px" EnableViewState="True">
             <Series>
@@ -50,8 +48,6 @@
         </asp:Chart>
         
     </div>
-   
-    
->>>>>>> 7a1d919090e43b1726a93455d6c9e2f75a0918bc
+
 
 </asp:Content>

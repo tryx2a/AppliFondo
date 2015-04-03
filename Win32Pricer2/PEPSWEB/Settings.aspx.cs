@@ -11,12 +11,25 @@ namespace PEPSWEB
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            if (string.IsNullOrWhiteSpace(dconsts.Text))
+            {
+                dconsts.Text = HttpContext.Current.Application["timeStepSub"].ToString();
+            }
+            if (string.IsNullOrWhiteSpace(H.Text))
+            {
+                H.Text = HttpContext.Current.Application["H"].ToString();
+            }
+            if (string.IsNullOrWhiteSpace(mc.Text))
+            {
+                mc.Text = HttpContext.Current.Application["TourMC"].ToString();
+            }
         }
 
         protected void saveSettings(object sender, EventArgs e)
         {
-            
+            HttpContext.Current.Application["timeStepSub"] = dconsts.Text;
+            HttpContext.Current.Application["H"] = H.Text;
+            HttpContext.Current.Application["TourMC"] = mc.Text;
         }
     }
 }
