@@ -35,9 +35,9 @@
 
         <asp:Chart ID="mainChart" runat="server" Visible="true" Height="500px" Width="988px" EnableViewState="True">
             <Series>
-                <asp:Series ChartType="Line" Legend="legend" LegendText="Prix" Name="price"></asp:Series>
-                <asp:Series ChartType="Line" Legend="legend" LegendText="Portefeuille de Couverture" Name="portfolio"></asp:Series>
-                <asp:Series ChartType="Line" Legend="legend" LegendText="Part investie au taux sans risque" Name="freeRiskInvested"></asp:Series>
+                <asp:Series ChartType="Line" Legend="legend" LegendText="Prix du Fondo Garantito" Name="price"></asp:Series>
+                <asp:Series ChartType="Line" Legend="legend" LegendText="Valeur du Portefeuille de Couverture" Name="portfolio"></asp:Series>
+               
             </Series>
             <ChartAreas>
                 <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
