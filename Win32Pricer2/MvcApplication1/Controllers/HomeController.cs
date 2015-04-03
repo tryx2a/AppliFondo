@@ -21,14 +21,9 @@ namespace MvcApplication1.Controllers
             //List<MvcApplication1.Models.Action> ListeAction = panier.getListAction(debut,fin);
 
             ViewData["Panier"] = "<table class=\"table\"><tr><th>ISIN</th><th>Nom</th><th>Devise</th><th>Prix Spot</th></tr>";
-
-<<<<<<< HEAD
-                    /*foreach (MvcApplication1.Models.Action action in ListeAction)
-=======
-                    
-
+         
+            /*
                     foreach (MvcApplication1.Models.Action action in ListeAction)
->>>>>>> 67f48cad8e06b5156dc463581b5ead664af62b64
                     {
                         ViewData["Panier"] += "<tr><td>"+  action.isin + "</td><td>" + action.nom + "</td><td>"+action.devise+"</td><td>" + action.prix + "</td></tr>";
                     } 

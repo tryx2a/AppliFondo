@@ -20,10 +20,8 @@ namespace MvcApplication1
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
 
-            
-              String _path = String.Concat(System.Environment.GetEnvironmentVariable("PATH"), ";", System.AppDomain.CurrentDomain.RelativeSearchPath);
-               System.Environment.SetEnvironmentVariable("PATH", _path, EnvironmentVariableTarget.Process);
-             
+            String _path = String.Concat(System.Environment.GetEnvironmentVariable("PATH"), ";", System.AppDomain.CurrentDomain.RelativeSearchPath);
+            System.Environment.SetEnvironmentVariable("PATH", _path, EnvironmentVariableTarget.Process);
              
         }
     }

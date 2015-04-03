@@ -3,6 +3,7 @@ using MvcApplication1.ServiceReference;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -22,9 +23,8 @@ namespace MvcApplication1.Controllers.Fondo
         {
 
             return View(new Models.Fondo());
+
         }
-
-
 
         [AcceptVerbs(HttpVerbs.Post)]
         private ActionResult View(Models.Fondo fondo)
@@ -38,64 +38,84 @@ namespace MvcApplication1.Controllers.Fondo
 
             string[] l = { "BUD", "AAPL", "SAN", "3988.HK", "BRK.A", "0939.HK", "CHL", "ENI.MI", "XOM", "GSZ.PA", "1398.HK", "MC.PA",
                               "MSFT", "PTR", "SAN.PA", "SIE.DE", "TEF", "TOT", "UN", "WMT" };
-            ServiceReference.ActifServiceClient client = new ServiceReference.ActifServiceClient();
-            ServiceReference.DataHistoricalColumn[] hc = new ServiceReference.DataHistoricalColumn[1];
-            hc[0] = DataHistoricalColumn.Close;
-            Data resultRq = client.getActifHistorique(l, hc, debut, fin);
-            client.Close();
+            //try
+            //{
+                ServiceReference.ActifServiceClient client = new ServiceReference.ActifServiceClient();
+                ServiceReference.DataHistoricalColumn[] hc = new ServiceReference.DataHistoricalColumn[1];
+                hc[0] = DataHistoricalColumn.Close;
+                Data resultRq = client.getActifHistorique(l, hc, debut, fin);
+                client.Close();
 
-            TauxDeChange fx = new TauxDeChange();
-            double fxUsdEuro = fx.getFxUsdEur()[0];
-            double fxCnyEuro = fx.getFxYuanEur()[0];
-
-
-            double[] getSpot_ = new double[22];
-            getSpot_[0] = fxUsdEuro;
-            getSpot_[1] = fxCnyEuro;
-            for (int i = 2; i < 22; i++)
-            {
-                getSpot_[i] = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[i - 2]["Close"]);
-            }
+                TauxDeChange fx = new TauxDeChange();
+                double fxUsdEuro = fx.getFxUsdEur()[0];
+                double fxCnyEuro = fx.getFxYuanEur()[0];
 
 
-            int timeStepsSub_ = Convert.ToInt32(Request["timeStepSub"]);
-            int H_ = Convert.ToInt32(Request["H"]);
-            int sample_ = Convert.ToInt32(Request["sample"]);
+                double[] getSpot_ = new double[22];
+                getSpot_[0] = fxUsdEuro;
+                getSpot_[1] = fxCnyEuro;
+                for (int i = 2; i < 22; i++)
+                {
+                    getSpot_[i] = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[i - 2]["Close"]);
+                }
 
-  
-            WrapperClass2 wc = new WrapperClass2(timeStepsSub_,H_,sample_);
+                int timeStepsSub_ = Convert.ToInt32(Request["timeStepSub"]);
+                int H_ = Convert.ToInt32(Request["H"]);
+                int sample_ = Convert.ToInt32(Request["sample"]);
 
-            //for pour initialiser spot de wc
-            for (int i = 0; i < getSpot_.Length; i++)
-            {
-                wc.setSpot(getSpot_[i],i);
-            }
 
-            //wc.computePriceWrapper2();
-            wc.computePnlWrapper();
+                WrapperClass2 wc = new WrapperClass2(timeStepsSub_, H_, sample_);
 
-            prix = wc.getPriceWrapper();
-            ic = wc.getICWrapper();
-            pnl = wc.getPnLWrapper();
+                //for pour initialiser spot de wc
+                for (int i = 0; i < getSpot_.Length; i++)
+                {
+                    wc.setSpot(getSpot_[i], i);
+                }
 
-            //Récupération du payoff
-            double[] payoff = wc.getPayoff();
-            double[] portfolio = wc.getPfCouverture();
-            double[] partSansRisque = wc.getPartSansRisque();
+                //wc.computePriceWrapper2();
+                wc.computePnlWrapper();
 
-            ViewData["Couverture"] = "<table class=\"table\"><tr><th>Part du taux sans risque</th><th>Payoff</th><th>Portefeuille de Couverture</th><th>Tracking Error</th></tr>";
+                prix = wc.getPriceWrapper();
+                ic = wc.getICWrapper();
+                pnl = wc.getPnLWrapper();
 
-            for (int i = 0; i < payoff.Length; i++)
-            {
-                double trackingError = portfolio[i] - payoff[i];
-                ViewData["Couverture"] += "<tr><td>" + partSansRisque[i] + "</td><td>" + payoff[i] + "</td><td>" + portfolio[i] + "</td><td>" + trackingError + "</td></tr>";
-            }
+                //Récupération du payoff
+                double[] payoff = wc.getPayoff();
+                double[] portfolio = wc.getPfCouverture();
+                double[] partSansRisque = wc.getPartSansRisque();
 
-            ViewData["Couverture"] += "</table>";
+                ViewData["Couverture"] = "<table class=\"table\"><tr><th>Part du taux sans risque</th><th>Payoff</th><th>Portefeuille de Couverture</th><th>Tracking Error</th></tr>";
 
-            ViewData["Prix"] = prix.ToString();
-            ViewData["IC"] = ic.ToString();
-            ViewData["PnL"] = pnl.ToString();
+                System.Web.UI.DataVisualization.Charting.Chart ch = new System.Web.UI.DataVisualization.Charting.Chart();
+                ch.Width = 400;
+                ch.Height = 500;
+                ch.ChartAreas.Add("ChartArea1");
+                ch.Series.Add("Payoff");
+                ch.Series["Payoff"].ChartType = System.Web.UI.DataVisualization.Charting.SeriesChartType.Line;
+
+                for (int i = 0; i < payoff.Length; i++)
+                {
+                    double trackingError = portfolio[i] - payoff[i];
+                    ViewData["Couverture"] += "<tr><td>" + partSansRisque[i] + "</td><td>" + payoff[i] + "</td><td>" + portfolio[i] + "</td><td>" + trackingError + "</td></tr>";
+                    ch.Series["Payoff"].Points.AddXY(i, payoff[i]);
+                }
+   
+                ch.SaveImage("C:/Users/François/Documents/Ensimag/3A/PEPS/AppliFondo/Win32Pricer2/res.png");
+   
+
+                ViewData["Couverture"] += "</table>";
+
+                ViewData["Prix"] = prix.ToString();
+                ViewData["IC"] = ic.ToString();
+                ViewData["PnL"] = pnl.ToString();
+
+                
+            //}
+            //catch (InvalidOperationException e)
+            //{
+            //    e.ToString();
+            //}
+
 
             return View();
         }
