@@ -13,75 +13,48 @@ namespace PEPSWEB {
     public partial class _Default {
         
         /// <summary>
-        /// Contrôle sim.
+        /// Contrôle simul.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button sim;
+        protected global::System.Web.UI.WebControls.Button simul;
         
         /// <summary>
-        /// Contrôle prt.
+        /// Contrôle sansRisquet.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label prt;
+        protected global::System.Web.UI.WebControls.Label sansRisquet;
         
         /// <summary>
-        /// Contrôle pr.
+        /// Contrôle sansRisque.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pr;
+        protected global::System.Web.UI.WebControls.Label sansRisque;
         
         /// <summary>
-        /// Contrôle ict.
+        /// Contrôle deltat.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ict;
+        protected global::System.Web.UI.WebControls.Label deltat;
         
         /// <summary>
-        /// Contrôle intc.
+        /// Contrôle deltaV.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox intc;
-        
-        /// <summary>
-        /// Contrôle couvt.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label couvt;
-        
-        /// <summary>
-        /// Contrôle couv.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox couv;
-        
-        /// <summary>
-        /// Contrôle mainChart.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.DataVisualization.Charting.Chart mainChart;
+        protected global::System.Web.UI.WebControls.Label deltaV;
     }
 }

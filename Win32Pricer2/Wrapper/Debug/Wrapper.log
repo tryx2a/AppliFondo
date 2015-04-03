@@ -1,26 +1,5 @@
-﻿La génération a démarré 03/04/2015 21:48:47.
-     1>Projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Wrapper\Wrapper.vcxproj" sur le nœud 2 (Build cible(s)).
-     1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Pricer /I"..\pnl-win32-1.7.1\include" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Debug\Wrapper.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib Stdafx.cpp
-         Stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Pricer /I"..\pnl-win32-1.7.1\include" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\\" /AI"C:\Program Files (x86)\Windows Kits\8.1\References\CommonConfiguration\Neutral" /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\Facades\\" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\Wrapper.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib AssemblyInfo.cpp Wrapper.cpp
-         AssemblyInfo.cpp
-         Wrapper.cpp
-         Génération de code en cours...
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Pricer /I"..\pnl-win32-1.7.1\include" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /TP /analyze- /errorReport:prompt "C:\Users\Yannick\AppData\Local\Temp\.NETFramework,Version=v4.5.1.AssemblyAttributes.cpp"
-         .NETFramework,Version=v4.5.1.AssemblyAttributes.cpp
-       ResourceCompile:
-         C:\Program Files (x86)\Windows Kits\8.1\bin\x86\rc.exe /D _UNICODE /D UNICODE /l"0x0409" /nologo /fo"Debug\app.res" app.rc 
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.dll" /INCREMENTAL /NOLOGO /LIBPATH:"..\pnl-win32-1.7.1\lib" /LIBPATH:..\Pricer /LIBPATH:..\Debug libpnl.lib Delayimp.lib /DELAYLOAD:Pricer.dll /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
-         Debug\AssemblyInfo.obj
-         Debug\Stdafx.obj
-         Debug\Wrapper.obj
-         "Debug\.NETFramework,Version=v4.5.1.AssemblyAttributes.obj"
-         C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.lib
-         Wrapper.vcxproj -> C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.dll
-     1>Génération du projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Wrapper\Wrapper.vcxproj" terminée (Build cible(s)).
+﻿La génération a démarré 03/04/2015 23:46:10.
 
 La génération a réussi.
 
-Temps écoulé 00:00:03.17
+Temps écoulé 00:00:00.13

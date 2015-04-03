@@ -16,7 +16,7 @@ namespace Wrapper2 {
 		timeSteps = 1;
 		h = 0.1;
 		H = 70;
-		samples = 1500;
+		samples = 1000;
 		vlr = 1000;
 		pnl = 0;
 		timeStepSubscription = 4;
@@ -68,6 +68,8 @@ namespace Wrapper2 {
 		payoff = gcnew array<double>(H);
 		valeurPfCouverture = gcnew array<double>(H);
 		partSansRisque = gcnew array<double>(H);
+
+		delta = gcnew array<double>(option_size);
 	};
 	
 	WrapperClass2::WrapperClass2(int timeStepsSub_, int H_, int sample_) {
@@ -115,6 +117,8 @@ namespace Wrapper2 {
 		payoff = gcnew array<double>(H_);
 		valeurPfCouverture = gcnew array<double>(H_);
 		partSansRisque = gcnew array<double>(H_);
+
+		delta = gcnew array<double>(option_size);
 	};
 
 	void WrapperClass2::computePriceWrapper(){
@@ -173,7 +177,28 @@ namespace Wrapper2 {
 		this->confidenceInterval = ic;
 		this->prix = px;
 		this->pnl = pnl;
+	}
 
+	void WrapperClass2::computeCompoPfWrapper(double tho){
+		double V;
+		pin_ptr<double> pSpot = &spot[0];
+		pin_ptr<double> pSigma = &sigma[0];
+		pin_ptr<double> pTrend = &trend[0];
+
+		pin_ptr<double> pPayoff = &payoff[0];
+		pin_ptr<double> pPartSansRisque = &partSansRisque[0];
+		pin_ptr<double> pValeurPortfolio = &valeurPfCouverture[0];
+
+		pin_ptr<double> pDelta = &delta[0];
+
+		double subPeriod = 0.3;
+		int timeStepSub = 4;
+
+		computeCompoPf(V, option_size, pSpot, pSigma, pTrend,
+			rho, h, H, maturity, timeSteps, samples, vlr, subPeriod, timeStepSub,
+			pDelta,tho);
+
+		this->partTauxSansRisque = V;
 
 	}
 

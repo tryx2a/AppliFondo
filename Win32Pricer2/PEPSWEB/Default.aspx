@@ -3,51 +3,70 @@
 <%@ Register Assembly="System.Web.DataVisualization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" Namespace="System.Web.UI.DataVisualization.Charting" TagPrefix="asp" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <br><br>
-    <asp:Button id="sim" Text="Simuler" ForeColor="White"  BorderStyle="Ridge" Font-Bold="true" Width="150" Height="40" runat="server" BackColor="Black" OnClick="sim_Click"/>
-    <br><br>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    
+        </br></br>  
+        <div class="container">
+            <div class="row">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Couverture du produit</h3>
+                    </div>
+                    <div class="panel-body">
+                        Selectionner la date à couvrir : </br>
+                        <p><input type="text" id="datepicker"></p>
 
-    <div id="res">
-        <div style="float:left; width:550px">
-            <asp:Label ID="prt" runat="server" Text="Prix: "></asp:Label>
-        </div>
-        <div style="float: left; width:200px">    
-            <asp:TextBox id="pr" rows="10" TextMode="multiline" runat="server" />
-        </div>
-        <br><br>
+                        <asp:Button ID="simul" runat="server" OnClick="simul_Click" Text="Simuler" />
 
-        <div style="float:left; width:550px">
-            <asp:Label ID="ict" runat="server" Text="Portefeuille de Couverture: "></asp:Label>
+                        <div>
+                            <asp:Label ID="sansRisquet" runat="server" Text="Part à investir au taux sans risque : " />
+                            <br />
+                            <asp:Label ID="sansRisque" runat="server">  </asp:Label>
+                            <br />
+                            <asp:Label ID="deltat" runat="server" Text="Part à investir dans chaque titre : " />
+                            <br />    
+                            <asp:Label id="deltaV" rows="22" TextMode="multiline" runat="server" />
+                        </div>
+                        <br><br>
+                        
+                    </div>
+                </div>
+             </div>
         </div>
-        <div style="float: left; width:300px">
-            <asp:TextBox id="intc" rows="10" TextMode="multiline" runat="server" />
-        </div>
-        <br><br>
+  
+    
+    <script>
+        $(function() {
+            $("#datepicker").datepicker({
+                altField: "#datepicker",
+                closeText: 'Fermer',
+                prevText: 'Précédent',
+                nextText: 'Suivant',
+                currentText: 'Aujourd\'hui',
+                monthNames: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                monthNamesShort: ['Janv.', 'Févr.', 'Mars', 'Avril', 'Mai', 'Juin', 'Juil.', 'Août', 'Sept.', 'Oct.', 'Nov.', 'Déc.'],
+                dayNames: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+                dayNamesShort: ['Dim.', 'Lun.', 'Mar.', 'Mer.', 'Jeu.', 'Ven.', 'Sam.'],
+                dayNamesMin: ['D', 'L', 'M', 'M', 'J', 'V', 'S'],
+                weekHeader: 'Sem.',
+                dateFormat: 'dd/mm/yy',
+                //Permet de saisir la date au moment de la selection
+                onSelect: function () {
+                    var day1 = $("#datepicker").datepicker('getDate').getDate();
+                    var month1 = $("#datepicker").datepicker('getDate').getMonth() + 1;
+                    var year1 = $("#datepicker").datepicker('getDate').getFullYear();
+                    var fullDate = day1 + "/" + month1 + "/" + year1;
+                    currentDate = fullDate;
 
-        <div style="float:left; width:550px">
-            <asp:Label ID="couvt" runat="server" Text="Part Investie au taux sans risque: "></asp:Label>
-        </div>
-        <div style="float: left; width:300px">
-            <asp:TextBox id="couv" rows="10" TextMode="multiline" runat="server" />
-        </div>
-        <br><br>
+                    document.forms['formulaire'].elements['nom'].value = currentDate;
+                    document.forms['formDate'].elements['dateSaisi'].value = currentDate;
 
 
-        <asp:Chart ID="mainChart" runat="server" Visible="true" Height="500px" Width="988px" EnableViewState="True">
-            <Series>
-                <asp:Series ChartType="Line" Legend="legend" LegendText="Prix du Fondo Garantito" Name="price"></asp:Series>
-                <asp:Series ChartType="Line" Legend="legend" LegendText="Valeur du Portefeuille de Couverture" Name="portfolio"></asp:Series>
-               
-            </Series>
-            <ChartAreas>
-                <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
-            </ChartAreas>
-            <Legends>
-                <asp:Legend Name="legend" BorderColor="Black"></asp:Legend>
-            </Legends>
-        </asp:Chart>
-        
-    </div>
-
+                }
+            });
+        });
+    </script>
 
 </asp:Content>

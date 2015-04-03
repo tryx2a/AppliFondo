@@ -18,5 +18,9 @@ namespace Computations
 		double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub,
 		double *tabPayoff, double *tabPartSansRisque ,double *tabValuePfCouv);
 
+	DLLEXP void computeCompoPf(double &partSansRisque, int option_size, double *spot, double *sigma, double* trend,
+		double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub,
+		double *tabDelta, double tho);
+
 };
 

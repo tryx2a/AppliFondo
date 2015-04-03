@@ -85,6 +85,18 @@ public:
    * @param[in] past matrice correspondant aux trajectoires passées des actifs risqués
    */
   void freeRiskInvestedPart(double &V, double T, double &portfolio, double &price, PnlVect *delta, double tho, PnlMat *past);
+
+  /**
+  * Cette méthode calcule pour une date donnée la composition du portefeuille
+  *
+  * @param[in] V double correspondant à la part investit au taux sans risque
+  * @param[in] T double correspondant à la maturité du produit
+  * @param[in] delta vecteur correspondant à la part à investir dans chaque actif risqué
+  * @param[in] tho double correspondant à la date de rebalancement
+  * @param[in] past matrice corresponadant aux trajectoires passées des actifs risqués
+  */
+  void portfolioCompositionAtTho(double &V, double T, PnlVect *delta, double tho, PnlMat *past);
+
 };
 
 #endif /* !_METHOD_H */
