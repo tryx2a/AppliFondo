@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Fichiers de ressources">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="method">
+      <UniqueIdentifier>{482d2eed-f2fb-4eee-9c7d-e14fba0667cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="model">
+      <UniqueIdentifier>{808144f1-8026-4f81-a49e-f57c01fcbc02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="produits">
+      <UniqueIdentifier>{e5642b5d-0a91-4d23-8f82-362e80bcfa9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="rate">
+      <UniqueIdentifier>{4db4f90e-851e-4503-8865-d48b55805ca6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\method\mc.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\method\method.cpp">
+      <Filter>method</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\bs.cpp">
+      <Filter>model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\model\model.cpp">
+      <Filter>model</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\taux.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\tauxCIR.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\tauxConstant.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\tauxDeChange.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\tauxLPM.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\rate\tauxVasicek.cpp">
+      <Filter>rate</Filter>
+    </ClCompile>
+    <ClCompile Include="src\produits\fondoGarantito.cpp">
+      <Filter>produits</Filter>
+    </ClCompile>
+    <ClCompile Include="src\produits\optionBasket.cpp">
+      <Filter>produits</Filter>
+    </ClCompile>
+    <ClCompile Include="src\produits\produit.cpp">
+      <Filter>produits</Filter>
+    </ClCompile>
+    <ClCompile Include="src\parserCSV.cpp" />
+    <ClCompile Include="src\Computations.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\method\mc.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\method\method.h">
+      <Filter>method</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\bs.h">
+      <Filter>model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\model\model.h">
+      <Filter>model</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\taux.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\tauxCIR.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\tauxConstant.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\tauxDeChange.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\tauxLPM.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\rate\tauxVasicek.h">
+      <Filter>rate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\produits\fondoGarantito.h">
+      <Filter>produits</Filter>
+    </ClInclude>
+    <ClInclude Include="src\produits\optionBasket.h">
+      <Filter>produits</Filter>
+    </ClInclude>
+    <ClInclude Include="src\produits\produit.h">
+      <Filter>produits</Filter>
+    </ClInclude>
+    <ClInclude Include="src\parserCSV.h" />
+    <ClInclude Include="src\Computations.h" />
+  </ItemGroup>
+</Project>
