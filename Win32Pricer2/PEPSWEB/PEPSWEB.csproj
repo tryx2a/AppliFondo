@@ -45,6 +45,8 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -188,6 +190,28 @@
     <Content Include="Default.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <None Include="Service References\APIFiMag\item.disco" />
+    <None Include="Service References\APIFiMag\configuration91.svcinfo" />
+    <None Include="Service References\APIFiMag\configuration.svcinfo" />
+    <Content Include="Service References\APIFiMag\PEPSWEB.APIFiMag.Data.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\APIFiMag\PEPSWEB.APIFiMag.getActifHistoriqueResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\APIFiMag\PEPSWEB.APIFiMag.getExchangeRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\APIFiMag\PEPSWEB.APIFiMag.getInterestRateResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\APIFiMag\PEPSWEB.APIFiMag.getXMLResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\APIFiMag\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Settings.aspx" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />
@@ -196,6 +220,22 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <None Include="Service References\APIFiMag\item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\APIFiMag\item1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\APIFiMag\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\APIFiMag\item3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\APIFiMag\item4.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\APIFiMag\Services.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -226,6 +266,11 @@
     </Compile>
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\APIFiMag\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Settings.aspx.cs">
       <DependentUpon>Settings.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -264,6 +309,12 @@
       <Project>{1e2d20fd-d605-4e23-9db0-5117f0095335}</Project>
       <Name>Wrapper</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\APIFiMag\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

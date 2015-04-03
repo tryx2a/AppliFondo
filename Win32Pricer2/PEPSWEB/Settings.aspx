@@ -73,5 +73,6 @@
             <asp:TextBox id="mc" Text="1000" runat="server" />
         </div>
         <br><br>
+        <asp:Literal runat="server" id="txtValueB" EnableViewState="false" />
   
 </asp:Content>
