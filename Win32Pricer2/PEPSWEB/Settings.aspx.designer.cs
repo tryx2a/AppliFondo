@@ -175,12 +175,20 @@ namespace PEPSWEB {
         protected global::System.Web.UI.WebControls.TextBox mc;
         
         /// <summary>
+<<<<<<< HEAD
         /// Contrôle txtValueB.
+=======
+        /// Contrôle config.
+>>>>>>> 7a1d919090e43b1726a93455d6c9e2f75a0918bc
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
+<<<<<<< HEAD
         protected global::System.Web.UI.WebControls.Literal txtValueB;
+=======
+        protected global::System.Web.UI.WebControls.Button config;
+>>>>>>> 7a1d919090e43b1726a93455d6c9e2f75a0918bc
     }
 }

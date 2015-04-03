@@ -73,6 +73,14 @@
             <asp:TextBox id="mc" Text="1000" runat="server" />
         </div>
         <br><br>
+<<<<<<< HEAD
         <asp:Literal runat="server" id="txtValueB" EnableViewState="false" />
   
+=======
+        
+        <br><br>
+            <asp:Button id="config" Text="Enregistrer la configuration" ForeColor="White"  BorderStyle="Ridge" Font-Bold="true" Width="300" Height="40" runat="server" BackColor="Black" OnClick="saveSettings"/>
+        <br><br>
+
+>>>>>>> 7a1d919090e43b1726a93455d6c9e2f75a0918bc
 </asp:Content>
