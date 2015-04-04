@@ -1,9 +1,5 @@
-﻿La génération a démarré 04/04/2015 21:02:44.
-     1>Projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Pricer\Pricer.vcxproj" sur le nœud 2 (Clean cible(s)).
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : Le processus ne peut pas accéder au fichier 'c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\debug\pricer.ilk', car il est en cours d'utilisation par un autre processus.
-     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V120\Microsoft.CppClean.targets(76,5): warning : Le processus ne peut pas accéder au fichier 'c:\users\françois\documents\ensimag\3a\peps\applifondo\win32pricer2\debug\pricer.pdb', car il est en cours d'utilisation par un autre processus.
-     1>Génération du projet "C:\Users\François\Documents\Ensimag\3A\PEPS\AppliFondo\Win32Pricer2\Pricer\Pricer.vcxproj" terminée (Clean cible(s)).
+﻿La génération a démarré 04/04/2015 21:54:04.
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.09
+Temps écoulé 00:00:00.03
