@@ -205,3 +205,24 @@ void Method::freeRiskInvestedPart(double &V, double T, double &portfolio, double
   pnl_mat_free(&path);
 }
 
+void Method::portfolioCompositionAtTho(double &V, double T, PnlVect *delta, double tho, PnlMat *past){
+	//Calcul du prix
+	double refprice, refic;
+	this->price(refprice, refic);
+
+	//Compute delta_tho
+	PnlVect *ic;
+	ic = pnl_vect_create(this->mod_->size_);
+	this->delta(past, tho, delta, ic);
+
+	//On récupère S_tho
+	PnlVect *s;
+	s = pnl_vect_create(this->mod_->size_);
+	pnl_mat_get_row(s, past, past->m - 1);
+
+	//On calcul V_tho
+	V = refprice * exp(this->mod_->r_->computeRate(tho)) - pnl_vect_scalar_prod(delta, s);
+
+	pnl_vect_free(&s);
+	pnl_vect_free(&ic);
+}

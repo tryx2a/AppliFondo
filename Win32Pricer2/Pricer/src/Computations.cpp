@@ -91,3 +91,38 @@ void Computations::computePnL(double &ic, double &prix, double &pnl, int option_
 	pnl = portfolio - payoff;
 	
 }
+
+void Computations::computeCompoPf(double &partSansRisque, int option_size, double *spot, double *sigma, double* trend,
+	double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub,
+	double *tabDelta, double tho){
+
+	Taux *r = new TauxLPM();
+	TauxDeChange *fx = new TauxDeChange();
+
+	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 14, 3, 4, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
+
+	double V = 0.0;
+	PnlVect *delta = pnl_vect_create(mc->opt_->size_);
+
+	/*************
+	* ATTENTION : le tho doit être celui d'aujourd'hui et non une valeur arbitraire
+	**************/
+	//double tho = 3.4;
+
+	PnlMat *past;
+	past = pnl_mat_create(mc->H_ + 1, mc->mod_->size_);
+	mc->mod_->simul_market(past, tho, mc->H_, mc->rng);
+
+	mc->portfolioCompositionAtTho(V, maturity, delta, tho, past);
+
+	for (int i = 0; i < delta->size; i++){
+		tabDelta[i] = GET(delta, i);
+	}
+
+	partSansRisque = V;
+
+	pnl_mat_free(&past);
+	pnl_vect_free(&delta);
+	delete mc;
+
+}

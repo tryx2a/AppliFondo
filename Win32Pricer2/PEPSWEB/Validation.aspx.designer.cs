@@ -22,58 +22,13 @@ namespace PEPSWEB {
         protected global::System.Web.UI.WebControls.Button sim;
         
         /// <summary>
-        /// Contrôle prt.
+        /// Contrôle values.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label prt;
-        
-        /// <summary>
-        /// Contrôle pr.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pr;
-        
-        /// <summary>
-        /// Contrôle ict.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label ict;
-        
-        /// <summary>
-        /// Contrôle intc.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox intc;
-        
-        /// <summary>
-        /// Contrôle couvt.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label couvt;
-        
-        /// <summary>
-        /// Contrôle couv.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox couv;
+        protected global::System.Web.UI.WebControls.Label values;
         
         /// <summary>
         /// Contrôle mainChart.

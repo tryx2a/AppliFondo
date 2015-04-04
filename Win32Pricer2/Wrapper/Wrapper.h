@@ -22,15 +22,22 @@ namespace Wrapper2 {
 		double vlr;
 		int timeStepSubscription;
 
+		double partTauxSansRisque;
+
 		array<double> ^spot;
 		array<double> ^sigma;
 		array<double> ^trend;
+
 		array<double> ^fxUsdEur;
 		array<double> ^fxYuanEur;
+
 		array<double> ^tauxActu;
+
 		array<double> ^payoff;
 		array<double> ^partSansRisque;
 		array<double> ^valeurPfCouverture;
+
+		array<double> ^delta;
 
 	public:
 		WrapperClass2();
@@ -38,10 +45,14 @@ namespace Wrapper2 {
 		void computePriceWrapper();
 		void computePriceWrapper2();
 		void computePnlWrapper();
+		void computeCompoPfWrapper(double tho);
 
 		double getPriceWrapper() { return prix; };
 		double getICWrapper() { return confidenceInterval; };
 		double getPnLWrapper(){ return pnl; };
+		double getPartSansRisqueWrapper(){ return partTauxSansRisque; }
+
+		array<double> ^getVectDelta(){ return delta; };
 
 		array<double> ^getPayoff(){ return payoff; };
 		array<double> ^getPartSansRisque(){ return partSansRisque; };

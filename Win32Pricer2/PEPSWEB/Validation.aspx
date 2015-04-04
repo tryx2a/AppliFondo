@@ -7,31 +7,9 @@
     <br><br>
 
     <div id="res">
-        <div style="float:left; width:550px">
-            <asp:Label ID="prt" runat="server" Text="Prix: "></asp:Label>
-        </div>
-        <div style="float: left; width:200px">    
-            <asp:TextBox id="pr" rows="10" TextMode="multiline" runat="server" />
-        </div>
         <br><br>
-
-        <div style="float:left; width:550px">
-            <asp:Label ID="ict" runat="server" Text="Portefeuille de Couverture: "></asp:Label>
-        </div>
-        <div style="float: left; width:300px">
-            <asp:TextBox id="intc" rows="10" TextMode="multiline" runat="server" />
-        </div>
+        <asp:Label id="values" Width="988px" TextMode="multiline" runat="server" />
         <br><br>
-
-        <div style="float:left; width:550px">
-            <asp:Label ID="couvt" runat="server" Text="Part Investie au taux sans risque: "></asp:Label>
-        </div>
-        <div style="float: left; width:300px">
-            <asp:TextBox id="couv" rows="10" TextMode="multiline" runat="server" />
-        </div>
-        <br><br>
-
-
         <asp:Chart ID="mainChart" runat="server" Visible="true" Height="500px" Width="988px" EnableViewState="True">
             <Series>
                 <asp:Series ChartType="Line" Legend="legend" LegendText="Prix du Fondo Garantito" Name="price"></asp:Series>
@@ -42,7 +20,7 @@
                 <asp:ChartArea Name="ChartArea1"></asp:ChartArea>
             </ChartAreas>
             <Legends>
-                <asp:Legend Name="legend" BorderColor="Black"></asp:Legend>
+                <asp:Legend Name="legend" Enabled="false" BorderColor="Black"></asp:Legend>
             </Legends>
         </asp:Chart>
     </div>
