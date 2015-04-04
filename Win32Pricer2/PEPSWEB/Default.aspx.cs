@@ -26,6 +26,7 @@ namespace PEPSWEB
             int mois = Convert.ToInt32(contentDateSelect[1]);
             int annee = Convert.ToInt32(contentDateSelect[2]);
 
+            deltaV.Text = null;
 
             DateTime dateSelect = new DateTime(annee,mois,jour);
             DateTime debutSouscription = new DateTime(2011, 01, 29);

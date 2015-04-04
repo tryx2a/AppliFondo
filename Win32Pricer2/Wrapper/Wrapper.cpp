@@ -215,6 +215,9 @@ namespace Wrapper2 {
 			pDelta,tho);
 
 		this->partTauxSansRisque = V;
+		for (int i = 0; i < delta->Length; i++){
+			delta[i] = pDelta[i];
+		}
 
 	}
 
