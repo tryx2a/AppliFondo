@@ -73,5 +73,9 @@
             <asp:TextBox id="mc" Text="1000" runat="server" />
         </div>
         <br><br>
-  
+        
+        <br><br>
+            <asp:Button id="config" Text="Enregistrer la configuration" ForeColor="White"  BorderStyle="Ridge" Font-Bold="true" Width="300" Height="40" runat="server" BackColor="Black" OnClick="saveSettings"/>
+        <br><br>
+
 </asp:Content>

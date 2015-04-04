@@ -13,5 +13,10 @@ namespace PEPSWEB
         {
 
         }
+
+        protected void saveSettings(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
