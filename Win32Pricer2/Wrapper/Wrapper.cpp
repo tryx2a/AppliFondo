@@ -16,7 +16,7 @@ namespace Wrapper2 {
 		timeSteps = 1;
 		h = 0.1;
 		H = 70;
-		samples = 500;
+		samples = 1000;
 		vlr = 1000;
 		pnl = 0;
 		timeStepSubscription = 4;

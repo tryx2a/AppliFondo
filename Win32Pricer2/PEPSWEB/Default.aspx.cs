@@ -24,6 +24,7 @@ namespace PEPSWEB
             int samples = Convert.ToInt32(HttpContext.Current.Application["TourMC"]);
 
             WrapperClass2 wc = new WrapperClass2(timeStepSub,H,samples);
+
             wc.computeCompoPfWrapper(3.1);
             V = wc.getPartSansRisqueWrapper();
 

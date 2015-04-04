@@ -8,6 +8,7 @@
     <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     
         <br/>
+
         <div class="container">
             <div class="row">
                 <div class="panel panel-default">
@@ -16,6 +17,7 @@
                     </div>
                     <div class="panel-body">
                         Selectionner la date à couvrir : <br/>
+
                         <p><input type="text" id="datepicker"></p>
 
                         <asp:Button ID="simul" runat="server" OnClick="simul_Click" Text="Simuler" />
