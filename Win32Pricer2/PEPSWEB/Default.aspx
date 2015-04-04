@@ -32,6 +32,7 @@
         </div>
         <br><br>
 
+
         <asp:Chart ID="mainChart" runat="server" Visible="true" Height="500px" Width="988px" EnableViewState="True">
             <Series>
                 <asp:Series ChartType="Line" Legend="legend" LegendText="Prix du Fondo Garantito" Name="price"></asp:Series>
@@ -47,7 +48,6 @@
         </asp:Chart>
         
     </div>
-   
-    
+
 
 </asp:Content>

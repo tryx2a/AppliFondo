@@ -16,7 +16,10 @@ namespace PEPSWEB
 
             String _path = String.Concat(System.Environment.GetEnvironmentVariable("PATH"), ";", System.AppDomain.CurrentDomain.RelativeSearchPath);
             System.Environment.SetEnvironmentVariable("PATH", _path, EnvironmentVariableTarget.Process);
-             
+
+            HttpContext.Current.Application["timeStepSub"] = 4;
+            HttpContext.Current.Application["H"] = 70;
+            HttpContext.Current.Application["TourMC"] = 5000;
             
             // Code qui s’exécute au démarrage de l’application
             RouteConfig.RegisterRoutes(RouteTable.Routes);

@@ -54,6 +54,7 @@
       <PreprocessorDefinitions>WIN32;_XKEYCHECK_H;_DEBUG;_WINDOWS;_USRDLL;PRICER_EXPORTS;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>$(SolutionDir)\pnl-win32-1.7.1\include</AdditionalIncludeDirectories>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

@@ -28,7 +28,7 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox vlr;
+        protected global::System.Web.UI.WebControls.Label vlr;
         
         /// <summary>
         /// Contrôle psoust.
@@ -46,7 +46,7 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox psous;
+        protected global::System.Web.UI.WebControls.Label psous;
         
         /// <summary>
         /// Contrôle dconstst.
@@ -82,25 +82,7 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox mat;
-        
-        /// <summary>
-        /// Contrôle volt.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label volt;
-        
-        /// <summary>
-        /// Contrôle vol.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox vol;
+        protected global::System.Web.UI.WebControls.Label mat;
         
         /// <summary>
         /// Contrôle zct.
@@ -118,7 +100,7 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox zc;
+        protected global::System.Web.UI.WebControls.Label zc;
         
         /// <summary>
         /// Contrôle dconstpt.
@@ -136,7 +118,7 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox dconstp;
+        protected global::System.Web.UI.WebControls.Label dconstp;
         
         /// <summary>
         /// Contrôle pdt.
@@ -154,7 +136,25 @@ namespace PEPSWEB {
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pd;
+        protected global::System.Web.UI.WebControls.Label pd;
+        
+        /// <summary>
+        /// Contrôle Ht.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Ht;
+        
+        /// <summary>
+        /// Contrôle H.
+        /// </summary>
+        /// <remarks>
+        /// Champ généré automatiquement.
+        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox H;
         
         /// <summary>
         /// Contrôle mct.
