@@ -23,7 +23,7 @@
                             </div>
                             <div class="col-sm-4">
                                 <br />
-                                <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" Text="  Utiliser les données historiques"/>
+                                <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" Text="Récupération des données via le service"/>
                             </div>
                          </div>
                         <br /><br />

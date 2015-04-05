@@ -63,6 +63,8 @@ namespace Wrapper2 {
 		void setTauxUsdEur(double valeur, int indice);
 		void setTauxCnyEur(double valeur, int indice);
 
+
+
 		/*array<double> ^getDeltaWrapper(){ return delta; };
 		array<double> ^getDeltaICWrapper(){ return ic; };*/
 
