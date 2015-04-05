@@ -1,5 +1,57 @@
-﻿La génération a démarré 05/04/2015 14:55:25.
+﻿La génération a démarré 05/04/2015 15:01:06.
+     1>Projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Pricer\Pricer.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\\pnl-win32-1.7.1\include" /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _XKEYCHECK_H /D _DEBUG /D _WINDOWS /D _USRDLL /D PRICER_EXPORTS /D _LIB /D _WINDLL /D _UNICODE /D UNICODE /Gm /EHsc /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt src\Computations.cpp src\method\mc.cpp src\method\method.cpp src\model\bs.cpp src\model\model.cpp src\parserCSV.cpp src\produits\fondoGarantito.cpp src\produits\optionBasket.cpp src\produits\produit.cpp src\rate\taux.cpp src\rate\tauxCIR.cpp src\rate\tauxConstant.cpp src\rate\tauxDeChange.cpp src\rate\tauxLPM.cpp src\rate\tauxVasicek.cpp
+         tauxVasicek.cpp
+         tauxLPM.cpp
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\rate\tauxlpm.cpp(119): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+         tauxDeChange.cpp
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\rate\tauxdechange.cpp(159): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+         tauxConstant.cpp
+         tauxCIR.cpp
+         taux.cpp
+         produit.cpp
+         optionBasket.cpp
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\produits\optionbasket.cpp(31): warning C4101: 'i' : variable locale non référencée
+         fondoGarantito.cpp
+         parserCSV.cpp
+         model.cpp
+         bs.cpp
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\model\bs.cpp(94): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\model\bs.cpp(98): warning C4244: 'argument' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\model\bs.cpp(132): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\model\bs.cpp(142): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\model\bs.cpp(285): warning C4244: '=' : conversion de 'double' en 'int', perte possible de données
+         method.cpp
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\method\method.cpp(24): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned long', perte possible de données
+     1>c:\users\yannick\desktop\applifondo\win32pricer2\pricer\src\method\method.cpp(37): warning C4244: 'argument' : conversion de 'time_t' en 'unsigned long', perte possible de données
+         mc.cpp
+         Computations.cpp
+         Génération de code en cours...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.dll" /INCREMENTAL /NOLOGO /LIBPATH:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\\pnl-win32-1.7.1\lib" libpnl.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.lib" /MACHINE:X86 /DLL Debug\Computations.obj
+         Debug\mc.obj
+         Debug\method.obj
+         Debug\bs.obj
+         Debug\model.obj
+         Debug\parserCSV.obj
+         Debug\fondoGarantito.obj
+         Debug\optionBasket.obj
+         Debug\produit.obj
+         Debug\taux.obj
+         Debug\tauxCIR.obj
+         Debug\tauxConstant.obj
+         Debug\tauxDeChange.obj
+         Debug\tauxLPM.obj
+         Debug\tauxVasicek.obj
+            Création de la bibliothèque C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.lib et de l'objet C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.exp
+         Pricer.vcxproj -> C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.dll
+       PostBuildEvent:
+         copy "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.dll" "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\PEPSWEB\bin\Pricer.dll"
+         :VCEnd
+                 1 fichier(s) copié(s).
+     1>Génération du projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Pricer\Pricer.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.03
+Temps écoulé 00:00:11.56
