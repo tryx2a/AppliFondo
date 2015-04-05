@@ -16,20 +16,31 @@
                         <h3 class="panel-title">Couverture du produit</h3>
                     </div>
                     <div class="panel-body">
-                        Selectionner la date à couvrir : <br/>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                Selectionner la date à couvrir : <br/>
+                               <asp:TextBox id="datepicker" runat="server" />                  
+                            </div>
+                            <div class="col-sm-4">
+                                <br />
+                                <asp:CheckBox ID="CheckBox1" runat="server" Checked="true" Text="  Utiliser les données historiques"/>
+                            </div>
+                         </div>
+                        <br /><br />
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <asp:Button ID="simul" runat="server" OnClick="simul_Click" Text="Simuler" />
+                                 <br /><br />
+                            </div>
+                        </div>
 
-                        <p><asp:TextBox id="datepicker" runat="server" /></p>
-                        
-                        <asp:Button ID="simul" runat="server" OnClick="simul_Click" Text="Simuler" />
-
-                        <div>
-                            <asp:Label ID="sansRisquet" runat="server" Text="Part à investir au taux sans risque : " />
-                            <br />
-                            <asp:Label ID="sansRisque" runat="server">  </asp:Label>
-                            <br />
-                            <asp:Label ID="deltat" runat="server" Text="Part à investir dans chaque titre : " />
-                            <br />    
-                            <asp:Label id="deltaV" rows="22" TextMode="multiline" runat="server" />
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <asp:Label ID="sansRisque" runat="server">  </asp:Label>
+                                <br /><br />
+                                <asp:Label id="deltaV" rows="22" TextMode="multiline" runat="server" />
+                                <br /><br />
+                            </div>
                         </div>
                         <br><br>
                         

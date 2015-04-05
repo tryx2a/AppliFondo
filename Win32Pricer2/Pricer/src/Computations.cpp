@@ -17,7 +17,7 @@ void Computations::computePrice(double &ic, double &prix, int option_size, doubl
 	TauxDeChange *fx = new TauxDeChange();
 
 	Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
-	Model *mod = new BS(spot,sigma,rho,r,option_size,trend,fx,13,4,3,NULL);
+	Model *mod = new BS(spot,sigma,rho,r,option_size,trend,fx,10,5,5,NULL);
 	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
 
 	mc->price(prix, ic);
@@ -35,7 +35,7 @@ void Computations::computePrice(double &ic, double &prix, int option_size, doubl
 	/*Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
 	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
 	Method *mc = new  MonteCarlo(mod, p, h, H, samples);*/
-	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 14, 3, 4, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
+	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 10, 5, 5, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
 
 	mc->price(prix, ic);
 
@@ -52,7 +52,7 @@ void Computations::computePnL(double &ic, double &prix, double &pnl, int option_
 	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
 	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
 	*/
-	Method *mc=new MonteCarlo(spot,sigma,rho, r,option_size,trend,fx,14,3,4,NULL,maturity,timeSteps,vlr,subPeriod,timeStepSub,h,H,samples);
+	Method *mc=new MonteCarlo(spot,sigma,rho, r,option_size,trend,fx,10,5,5,NULL,maturity,timeSteps,vlr,subPeriod,timeStepSub,h,H,samples);
 
 	double V = 0.0;
 	double portfolio = 0.0;
@@ -99,7 +99,7 @@ void Computations::computeCompoPf(double &partSansRisque, int option_size, doubl
 	Taux *r = new TauxLPM();
 	TauxDeChange *fx = new TauxDeChange();
 
-	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 14, 3, 4, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
+	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 10, 5, 5, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
 
 	double V = 0.0;
 	PnlVect *delta = pnl_vect_create(mc->opt_->size_);
