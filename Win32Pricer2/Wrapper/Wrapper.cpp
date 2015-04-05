@@ -68,9 +68,9 @@ namespace Wrapper2 {
 			0.01567, 0.01654 };
 
 
-		payoff = gcnew array<double>(H);
-		valeurPfCouverture = gcnew array<double>(H);
-		partSansRisque = gcnew array<double>(H);
+		payoff = gcnew array<double>(H+1);
+		valeurPfCouverture = gcnew array<double>(H+1);
+		partSansRisque = gcnew array<double>(H+1);
 
 		delta = gcnew array<double>(option_size);
 	};
@@ -133,9 +133,9 @@ namespace Wrapper2 {
 			0.00457, 0.00584, 0.00634, 0.00756, 0.0088, 0.00974, 0.01034,
 			0.01149, 0.01198, 0.01356, 0.01402, 0.01451, 0.01503, 0.01604,
 			0.01567, 0.01654 };
-		payoff = gcnew array<double>(H);
-		valeurPfCouverture = gcnew array<double>(H);
-		partSansRisque = gcnew array<double>(H);
+		payoff = gcnew array<double>(H+1);
+		valeurPfCouverture = gcnew array<double>(H+1);
+		partSansRisque = gcnew array<double>(H+1);
 
 		delta = gcnew array<double>(option_size);
 	};

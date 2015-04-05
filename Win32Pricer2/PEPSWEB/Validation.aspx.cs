@@ -57,7 +57,7 @@ namespace PEPSWEB
                     minportfolio = portfolio[i];
 
                 // On ajoute le point aux Series du chart
-                double abs=(i+1)*MATURITY/H;
+                double abs=(i)*MATURITY/(H);
                 mainChart.Series["price"].Points.AddXY(abs, payoff[i]);
                 mainChart.Series["portfolio"].Points.AddXY(abs, portfolio[i]);
                 

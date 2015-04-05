@@ -19,7 +19,7 @@ namespace PEPSWEB
 
             HttpContext.Current.Application["timeStepSub"] = 4;
             HttpContext.Current.Application["H"] = 70;
-            HttpContext.Current.Application["TourMC"] = 5000;
+            HttpContext.Current.Application["TourMC"] = 1000;
             HttpContext.Current.Application["today"] = DateTime.Now.ToString("dd/MM/yyyy");
             
             // Code qui s’exécute au démarrage de l’application
