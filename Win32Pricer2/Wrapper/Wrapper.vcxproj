@@ -53,13 +53,15 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
-      <AdditionalIncludeDirectories>..\Pricer;..\pnl-win32-1.7.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Pricer;..\pnl-win32-1.7.1\include;%(AdditionalIncludeDirectories); ..\Pricer; ..\pnl-win32.1.7.1\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>libpnl.lib</AdditionalDependencies>
       <DelayLoadDLLs>Pricer.dll;%(DelayLoadDLLs)</DelayLoadDLLs>
-      <AdditionalLibraryDirectories>..\pnl-win32-1.7.1\lib;..\Pricer;..\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\pnl-win32-1.7.1\lib;..\Pricer;..\Debug;%(AdditionalLibraryDirectories)..\pnl-win32-1.7.1\lib; ..\Pricer;</AdditionalLibraryDirectories>
+      <HeapCommitSize>
+      </HeapCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -67,10 +69,14 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>WIN32;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PrecompiledHeader>Use</PrecompiledHeader>
+      <AdditionalIncludeDirectories>; ..\Pricer; ..\pnl-win32.1.7.1\include;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies />
+      <AdditionalLibraryDirectories>..\pnl-win32-1.7.1\lib; ..\Pricer;</AdditionalLibraryDirectories>
+      <HeapCommitSize>
+      </HeapCommitSize>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>

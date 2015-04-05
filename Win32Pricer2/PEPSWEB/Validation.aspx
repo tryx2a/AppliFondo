@@ -3,8 +3,24 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     
     <br><br>
-    <asp:Button id="sim" Text="Simuler" ForeColor="White"  BorderStyle="Ridge" Font-Bold="true" Width="150" Height="40" runat="server" BackColor="Black" OnClick="sim_Click"/>
-    <br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            Sectionner le produit à valider : 
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem Selected="True" Value="Fondo"> Fondo Garantito </asp:ListItem>
+                <asp:ListItem Value="Vanille"> Call Vanille </asp:ListItem>
+                <asp:ListItem Value="Quanto"> Call Quanto</asp:ListItem>
+            </asp:DropDownList>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-sm-4">    
+            <asp:Button id="sim" Text="Simuler" ForeColor="White"  BorderStyle="Ridge" Font-Bold="true" Width="150" Height="40" runat="server" BackColor="Black" OnClick="sim_Click"/>
+        </div>
+        <br><br>
+    </div>
 
     <div id="res">
         <br><br>
@@ -24,5 +40,6 @@
             </Legends>
         </asp:Chart>
     </div>
+</div>
 </asp:Content>
 

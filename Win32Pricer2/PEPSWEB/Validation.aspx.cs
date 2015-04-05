@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Runtime.ExceptionServices;
+using System.Security;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -15,11 +18,22 @@ namespace PEPSWEB
 
         }
 
+        public static bool IsCritical(Exception ex)
+        {
+            if (ex is OutOfMemoryException) return true;
+            if (ex is AccessViolationException) return true;
+            if (ex is System.Threading.ThreadAbortException)
+                return true;
+            return false;
+        }
+
+        [HandleProcessCorruptedStateExceptions]
+        [SecurityCritical]
         protected void sim_Click(object sender, EventArgs e)
         {
             try
             {
-
+               
                 double prix, ic, pnl;
 
                 int timeStepSub = Convert.ToInt32(HttpContext.Current.Application["timeStepSub"]);
@@ -95,9 +109,9 @@ namespace PEPSWEB
                 //On active la vision de la légende
                 mainChart.Legends[0].Enabled = true;
             }
-            catch (AccessViolationException ave)
+            catch (Exception exeption)
             {
-                MessageBox.Show("La simulation a échoué\n" + "Cause: " + ave.ToString());
+                MessageBox.Show("La simulation a échoué\n" + "Cause: " + exeption.ToString());
             }
             
 

@@ -61,7 +61,6 @@ void BS::computeCorrelation(PnlMat *past, PnlMat* corMat){
 			sum += MGET(past, j, i);
 		}
 		MLET(corMat, i, i) = sqrt(sumCarre/past->m - sum/past->m*sum/past->m);
-		LET(sigma_,i) = MGET(corMat,i, i);
 	}
 
 	double sumproduit = 0, sum1 = 0, sum2 = 0;

@@ -112,3 +112,10 @@ void Model::shift_asset(PnlMat *shift_path, const PnlMat *path,int d, double h, 
    * @param[in] H le nombre de rebalancement de notre portefeuille
    */
  void Model::simul_market(PnlMat *path, double T, int H, PnlRng *rng){}
+
+ /**
+ * Calcul la matrice de correlation à partir de données du passé
+ * @[in] past : matrice correspondant aux trajectoires passées des actifs
+ * @[in] corMat : matrice qui contiendra la matrice de corrélation des actifs
+ */
+ void Model::computeCorrelation(PnlMat *past, PnlMat* corMat){}

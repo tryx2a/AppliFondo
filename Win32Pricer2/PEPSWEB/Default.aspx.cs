@@ -105,7 +105,7 @@ namespace PEPSWEB
             }
             catch (InvalidOperationException ioe)
             {
-                MessageBox.Show("La simulation a échoué");
+                MessageBox.Show("La simulation a échoué" + "Cause" + ioe.ToString());
                 Console.WriteLine("Michel");
             }
         }

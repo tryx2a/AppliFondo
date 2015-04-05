@@ -141,6 +141,7 @@ void Method::freeRiskInvestedPart(PnlVect *V, double T, PnlVect *portfolio, PnlV
 }
 
 
+
 void Method::freeRiskInvestedPart(double &V, double T, double &portfolio, double &price, PnlVect *delta, double tho, PnlMat *past){
     
   FondoGarantito *fg = dynamic_cast<FondoGarantito*>(opt_);
@@ -150,7 +151,7 @@ void Method::freeRiskInvestedPart(double &V, double T, double &portfolio, double
     //Calcul du prix
     double refprice,refic;
     this->price(refprice,refic);
-    cout<<"price : "<<refprice<<endl;
+    //cout<<"price : "<<refprice<<endl;
 
     //Compute delta_0
     PnlVect *ic;
@@ -164,7 +165,7 @@ void Method::freeRiskInvestedPart(double &V, double T, double &portfolio, double
 
     //On calcul V_0
     V = refprice - pnl_vect_scalar_prod(delta,s);
-    std::cout<<"V : "<<V<<std::endl;
+    //std::cout<<"V : "<<V<<std::endl;
     portfolio = V + pnl_vect_scalar_prod(delta,s);
     price = refprice;
 
@@ -189,7 +190,7 @@ void Method::freeRiskInvestedPart(double &V, double T, double &portfolio, double
 
     //Calcul de la part investit au taux sans risque
     V = precV*exp(mod_->r_->computeRate(this->opt_->T_ / ((double) this->H_) ) ) - pnl_vect_scalar_prod(copyDelta,s);
-    std::cout<<"V : "<<V<<std::endl;
+    //std::cout<<"V : "<<V<<std::endl;
     portfolio = V + pnl_vect_scalar_prod(delta,s);
 
 

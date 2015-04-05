@@ -73,6 +73,7 @@ public:
    */
   void freeRiskInvestedPart(PnlVect *V,double T, PnlVect *portfolio, PnlVect *price);
 
+
   /**
    * Cette méthode calcule la part investit au taux sans risque à un un instant tho donné correspondant à une date de rebalancement
    *
@@ -85,6 +86,7 @@ public:
    * @param[in] past matrice correspondant aux trajectoires passées des actifs risqués
    */
   void freeRiskInvestedPart(double &V, double T, double &portfolio, double &price, PnlVect *delta, double tho, PnlMat *past);
+  
 
   /**
   * Cette méthode calcule pour une date donnée la composition du portefeuille

@@ -27,14 +27,10 @@ void Computations::computePrice(double &ic, double &prix, int option_size, doubl
 void Computations::computePrice(double &ic, double &prix, int option_size, double *spot, double *sigma, double* trend,
 	double rho, double h, int H, double maturity, int timeSteps, int samples, double vlr, double subPeriod, int timeStepSub)
 {
-	//PnlVect *u = pnl_vect_create_from_file("C:/Users/Yannick/Desktop/AppliFondo/Win32Pricer2/data/TauxZC.csv");
 
 	Taux *r = new TauxLPM();
 	TauxDeChange *fx = new TauxDeChange();
 
-	/*Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
-	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
-	Method *mc = new  MonteCarlo(mod, p, h, H, samples);*/
 	Method *mc = new MonteCarlo(spot, sigma, rho, r, option_size, trend, fx, 10, 5, 5, NULL, maturity, timeSteps, vlr, subPeriod, timeStepSub, h, H, samples);
 
 	mc->price(prix, ic);
@@ -48,10 +44,6 @@ void Computations::computePnL(double &ic, double &prix, double &pnl, int option_
 	Taux *r = new TauxLPM();
 	TauxDeChange *fx = new TauxDeChange();
 
-	/*Produit *p = new FondoGarantito(maturity, timeSteps, option_size, vlr, subPeriod, timeStepSub);
-	Model *mod = new BS(spot, sigma, rho, r, option_size, trend, fx, 13, 4, 3, NULL);
-	Method *mc = new  MonteCarlo(mod, p, h, H, samples);
-	*/
 	Method *mc=new MonteCarlo(spot,sigma,rho, r,option_size,trend,fx,10,5,5,NULL,maturity,timeSteps,vlr,subPeriod,timeStepSub,h,H,samples);
 
 	double V = 0.0;
@@ -67,6 +59,7 @@ void Computations::computePnL(double &ic, double &prix, double &pnl, int option_
 	
 	tempMarketResult = pnl_mat_copy(simulMarketResult);
 	
+	//mc->mod_->computeCorrelation(simulMarketResult, mc->mod_->chol);
 
 	for (int i = 0; i<H + 1; i++){
 		mc->freeRiskInvestedPart(V, maturity + subPeriod, portfolio, payoff, delta, tho, tempMarketResult);
@@ -89,7 +82,7 @@ void Computations::computePnL(double &ic, double &prix, double &pnl, int option_
 	prix = portfolio;
 	ic = payoff;
 	pnl = portfolio - payoff;
-	
+
 }
 
 void Computations::computeCompoPf(double &partSansRisque, int option_size, double *spot, double *sigma, double* trend,
@@ -104,14 +97,12 @@ void Computations::computeCompoPf(double &partSansRisque, int option_size, doubl
 	double V = 0.0;
 	PnlVect *delta = pnl_vect_create(mc->opt_->size_);
 
-	/*************
-	* ATTENTION : le tho doit être celui d'aujourd'hui et non une valeur arbitraire
-	**************/
-	//double tho = 3.4;
 
 	PnlMat *past;
 	past = pnl_mat_create(mc->H_ + 1, mc->mod_->size_);
 	mc->mod_->simul_market(past, tho, mc->H_, mc->rng);
+
+	//mc->mod_->computeCorrelation(past, mc->mod_->chol);
 
 	mc->portfolioCompositionAtTho(V, maturity, delta, tho, past);
 

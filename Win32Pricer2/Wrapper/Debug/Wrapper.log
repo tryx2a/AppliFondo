@@ -1,5 +1,15 @@
-﻿La génération a démarré 05/04/2015 16:43:16.
+﻿La génération a démarré 05/04/2015 22:54:08.
+     1>Projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Wrapper\Wrapper.vcxproj" sur le nœud 2 (Build cible(s)).
+     1>Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.dll" /INCREMENTAL /NOLOGO /LIBPATH:"..\pnl-win32-1.7.1\lib" /LIBPATH:..\Pricer /LIBPATH:..\Debug /LIBPATH:"..\pnl-win32-1.7.1\lib" /LIBPATH:..\Pricer libpnl.lib Delayimp.lib /DELAYLOAD:Pricer.dll /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 /DLL Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\Stdafx.obj
+         Debug\Wrapper.obj
+         "Debug\.NETFramework,Version=v4.5.1.AssemblyAttributes.obj"
+         C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Pricer.lib
+         Wrapper.vcxproj -> C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Debug\Wrapper.dll
+     1>Génération du projet "C:\Users\Yannick\Desktop\AppliFondo\Win32Pricer2\Wrapper\Wrapper.vcxproj" terminée (Build cible(s)).
 
 La génération a réussi.
 
-Temps écoulé 00:00:00.03
+Temps écoulé 00:00:01.83

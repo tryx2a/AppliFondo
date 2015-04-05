@@ -7,7 +7,7 @@
 class BS : public Model
 {
 public:
-  PnlMat *chol; /// matrice de cholesky calculé dans le constructeur
+
   
   BS(PnlVect *spot_, PnlVect *sigma_,double rho_,Taux* r_,int size_,PnlVect *trend, TauxDeChange *fx, int numberAssetEuro, int numberAssetDollar, int numberAssetYuan, const char *pastData);
   BS(double *spot_, double *sigma_, double rho_, Taux* r_, int size_, double *trend, TauxDeChange *fx, int numberAssetEuro, int numberAssetDollar, int numberAssetYuan, const char *pastData);

@@ -20,6 +20,7 @@ public:
   int numberAssetEuro_; /// Nombre d'actifs en devise Euro 
   int numberAssetDollar_; /// Nombre d'actifs en devise Dollar
   int numberAssetYuan_; /// Nombre d'actifs en devise Yuan
+  PnlMat *chol; /// matrice de cholesky calculé dans le constructeur
 
   //bool isRate; ///Boolean permettant de déterminer si on simule un taux de change
 
@@ -72,6 +73,13 @@ public:
    * @param[in] H le nombre de rebalancement de notre portefeuille
    */
   virtual void simul_market(PnlMat *path, double T, int H, PnlRng *rng);
+
+  /**
+  * Calcul la matrice de correlation à partir de données du passé
+  * @[in] past : matrice correspondant aux trajectoires passées des actifs
+  * @[in] corMat : matrice qui contiendra la matrice de corrélation des actifs
+  */
+  virtual void computeCorrelation(PnlMat *past, PnlMat* corMat);
 
 };
 
