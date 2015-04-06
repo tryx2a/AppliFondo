@@ -46,14 +46,9 @@ namespace MvcApplication1.Controllers.Fondo
                 Data resultRq = client.getActifHistorique(l, hc, debut, fin);
                 client.Close();
 
-                TauxDeChange fx = new TauxDeChange();
-                double fxUsdEuro = fx.getFxUsdEur()[0];
-                double fxCnyEuro = fx.getFxYuanEur()[0];
-
-
                 double[] getSpot_ = new double[22];
-                getSpot_[0] = fxUsdEuro;
-                getSpot_[1] = fxCnyEuro;
+                getSpot_[0] = 1.353;
+                getSpot_[1] = 9.2362545;
                 for (int i = 2; i < 22; i++)
                 {
                     getSpot_[i] = Convert.ToDouble(resultRq.Ds.Tables[0].Rows[i - 2]["Close"]);

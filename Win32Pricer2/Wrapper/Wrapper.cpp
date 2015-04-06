@@ -53,6 +53,7 @@ namespace Wrapper2 {
 		for (int i = 0; i < option_size; i++){
 			trend[i] = 0.03;
 		}
+
 		fxUsdEur = gcnew array<double>{ 1.353, 1.2369, 1.3095, 1.3973, 1.3171, 1.4141, 1.4287, 1.4242, 1.3672, 1.293, 1.3171, 1.2518,
 			1.2422, 1.3106, 1.3195, 1.3076, 1.292, 1.3296, 1.3664, 1.3779, 1.3924, 1.3628, 1.3366, 1.2812, 1.2101, 1.0575 };
 
@@ -65,6 +66,8 @@ namespace Wrapper2 {
 			0.00457, 0.00584, 0.00634, 0.00756, 0.0088, 0.00974, 0.01034,
 			0.01149, 0.01198, 0.01356, 0.01402, 0.01451, 0.01503, 0.01604,
 			0.01567, 0.01654 };
+
+
 		payoff = gcnew array<double>(H);
 		valeurPfCouverture = gcnew array<double>(H);
 		partSansRisque = gcnew array<double>(H);
@@ -215,6 +218,9 @@ namespace Wrapper2 {
 			pDelta,tho);
 
 		this->partTauxSansRisque = V;
+		for (int i = 0; i < delta->Length; i++){
+			delta[i] = pDelta[i];
+		}
 
 	}
 

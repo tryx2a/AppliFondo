@@ -18,8 +18,8 @@
                     <div class="panel-body">
                         Selectionner la date à couvrir : <br/>
 
-                        <p><input type="text" id="datepicker"></p>
-
+                        <p><asp:TextBox id="datepicker" runat="server" /></p>
+                        
                         <asp:Button ID="simul" runat="server" OnClick="simul_Click" Text="Simuler" />
 
                         <div>
@@ -41,8 +41,8 @@
     
     <script>
         $(function() {
-            $("#datepicker").datepicker({
-                altField: "#datepicker",
+            $("#MainContent_datepicker").datepicker({
+                altField: "#MainContent_datepicker",
                 closeText: 'Fermer',
                 prevText: 'Précédent',
                 nextText: 'Suivant',
@@ -56,16 +56,12 @@
                 dateFormat: 'dd/mm/yy',
                 //Permet de saisir la date au moment de la selection
                 onSelect: function () {
-                    var day1 = $("#datepicker").datepicker('getDate').getDate();
-                    var month1 = $("#datepicker").datepicker('getDate').getMonth() + 1;
-                    var year1 = $("#datepicker").datepicker('getDate').getFullYear();
+                    var day1 = $("#MainContent_datepicker").datepicker('getDate').getDate();
+                    var month1 = $("#MainContent_datepicker").datepicker('getDate').getMonth() + 1;
+                    var year1 = $("#MainContent_datepicker").datepicker('getDate').getFullYear();
                     var fullDate = day1 + "/" + month1 + "/" + year1;
                     currentDate = fullDate;
-
-                    document.forms['formulaire'].elements['nom'].value = currentDate;
-                    document.forms['formDate'].elements['dateSaisi'].value = currentDate;
-
-
+                    document.getElementById("MainContent_datepicker").value = currentDate;
                 }
             });
         });
